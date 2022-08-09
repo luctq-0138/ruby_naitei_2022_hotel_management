@@ -1,0 +1,14 @@
+{
+  "explorer.confirmDelete": false,
+  "editor.tabSize": 2,
+  "explorer.confirmDragAndDrop": false,
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "javascript.format.enable": false,
+  "javascript.preferences.quoteStyle": "single",
+  "javascript.autoClosingTags": true,
+  "[erb]": {},
+  "javascript.format.insertSpaceAfterCommaDelimiter": false,
+  "javascript.format.insertSpaceAfterConstructor": false
+}
