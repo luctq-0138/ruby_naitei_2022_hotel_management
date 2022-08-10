@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(version: 2022_08_10_101724) do
 
   create_table "payments", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "booking_id"
-    t.string "type", null: false
+    t.string "payment_type", null: false
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -49,7 +49,7 @@ ActiveRecord::Schema.define(version: 2022_08_10_101724) do
 
   create_table "room_types", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "type_name", null: false
-    t.string "type_description"
+    t.text "type_description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -59,7 +59,7 @@ ActiveRecord::Schema.define(version: 2022_08_10_101724) do
     t.string "name"
     t.decimal "cost", precision: 10, scale: 2
     t.integer "star_rate"
-    t.boolean "is_available", default: false
+    t.boolean "is_available", default: true
     t.string "image"
     t.bigint "room_type_id"
     t.datetime "created_at", precision: 6, null: false
@@ -70,7 +70,7 @@ ActiveRecord::Schema.define(version: 2022_08_10_101724) do
   create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name", null: false
     t.string "email", null: false
-    t.string "password_disgest", null: false
+    t.string "password_digest", null: false
     t.text "address"
     t.string "phone_number"
     t.boolean "activated", default: false
