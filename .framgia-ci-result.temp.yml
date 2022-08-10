@@ -1,4 +1,0 @@
-rubocop:
-  comment: true
-  exit_code: 1792
-  ignore: false
