@@ -10,16 +10,78 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_08_09_090405) do
+ActiveRecord::Schema.define(version: 2022_08_10_101724) do
 
-  create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.string "name"
-    t.string "email"
-    t.string "address"
-    t.string "phone_number"
-    t.boolean "activated"
+  create_table "bookings", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.datetime "booking_date", null: false
+    t.string "duration_of_stay", null: false
+    t.datetime "check_in"
+    t.datetime "checkout"
+    t.integer "total_rooms_booked", null: false
+    t.integer "status", default: 0, null: false
+    t.bigint "user_id"
+    t.text "refuse_reason"
+    t.integer "user_star_rate"
+    t.decimal "total_amount", precision: 10, null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
+
+  create_table "payments", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "booking_id"
+    t.string "type", null: false
+    t.bigint "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["booking_id"], name: "index_payments_on_booking_id"
+    t.index ["user_id"], name: "index_payments_on_user_id"
+  end
+
+  create_table "room_bookeds", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "room_id"
+    t.bigint "booking_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["booking_id"], name: "index_room_bookeds_on_booking_id"
+    t.index ["room_id"], name: "index_room_bookeds_on_room_id"
+  end
+
+  create_table "room_types", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "type_name", null: false
+    t.string "type_description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "rooms", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.integer "number", null: false
+    t.string "name"
+    t.decimal "cost", precision: 10, scale: 2
+    t.integer "star_rate"
+    t.boolean "is_available", default: false
+    t.string "image"
+    t.bigint "room_type_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["room_type_id"], name: "index_rooms_on_room_type_id"
+  end
+
+  create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "email", null: false
+    t.string "password_disgest", null: false
+    t.text "address"
+    t.string "phone_number"
+    t.boolean "activated", default: false
+    t.integer "role", default: 0
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  add_foreign_key "payments", "bookings"
+  add_foreign_key "payments", "users"
+  add_foreign_key "room_bookeds", "bookings"
+  add_foreign_key "room_bookeds", "rooms"
+  add_foreign_key "rooms", "room_types"
 end
