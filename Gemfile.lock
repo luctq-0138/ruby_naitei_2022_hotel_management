@@ -88,6 +88,8 @@ GEM
     crass (1.0.6)
     diff-lcs (1.5.0)
     erubi (1.11.0)
+    faker (2.22.0)
+      i18n (>= 1.8.11, < 2)
     ffi (1.15.5)
     forest_liana (7.6.11)
       arel-helpers
@@ -331,6 +333,7 @@ DEPENDENCIES
   bootsnap (>= 1.4.4)
   byebug
   capybara (>= 3.26)
+  faker (= 2.22.0)
   forest_liana (~> 7.6)
   image_processing (~> 1.2)
   jbuilder (~> 2.7)

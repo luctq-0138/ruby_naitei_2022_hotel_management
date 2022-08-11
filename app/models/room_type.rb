@@ -1,3 +1,3 @@
 class RoomType < ApplicationRecord
-  has_one :room, dependent: :destroy
+  has_many :rooms, dependent: :destroy
 end
