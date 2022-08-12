@@ -1,0 +1,18 @@
+<div class="form-container">
+  <h1><%= t(".heading") %></h1>
+  <div>
+    <%= form_for(:session, url: login_path) do |f| %>
+      <%= f.label :email, t(".form.email") %>
+      <%= f.email_field :email, class: "form-control" %>
+      <%= f.label :password, t(".form.password") %>
+      <%= link_to t(".forgot_password"),"#" %>
+      <%= f.password_field :password, class: "form-control" %>
+      <%= f.label :remember_me, class: "checkbox inline" do %>
+        <%= f.check_box :remember_me %>
+        <span><%= t(".form.remember") %></span>
+      <% end %>
+      <%= f.submit t(".form.btn_submit"), class: "btn btn-primary" %>
+    <% end %>
+    <p><%= t(".new_user") %> <%= link_to t(".signup"), signup_path %></p>
+  </div>
+</div>

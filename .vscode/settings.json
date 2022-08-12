@@ -10,5 +10,8 @@
   "javascript.autoClosingTags": true,
   "[erb]": {},
   "javascript.format.insertSpaceAfterCommaDelimiter": false,
-  "javascript.format.insertSpaceAfterConstructor": false
+  "javascript.format.insertSpaceAfterConstructor": false,
+  "files.associations": {
+    "*.html.erb": "erb"
+  }
 }

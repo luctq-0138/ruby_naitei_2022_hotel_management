@@ -1,0 +1,31 @@
+vi:
+  users:
+    new:
+      welcome_hotel: "Chào mừng đến với khách sạn của chúng tôi"
+      sign_up: "Đăng ký"
+      form:
+        name: "Tên"
+        email: "Email"
+        password: "Mật khẩu"
+        password_confirm: "Xác nhận mật khẩu"
+    index:
+    create:
+      create_success: "Đăng ký thanh công"
+      create_fail: "Đăng ký thất bại"
+    find_user:
+      find_fail: "Người dùng không tìm thấy"
+  sessions:
+    new:
+      heading: "Đăng nhập"
+      new_user: "Người dùng mới?"
+      signup: "Đăng ký ngay!"
+      forgot_password: "(Quên mật khẩu)"
+      form:
+        email: "Email"
+        password: "Mật khẩu"
+        btn_submit: "Đăng nhập"
+        remember: "Ghi nhớ mật khẩu"
+  shared:
+    error_messages:
+      intro: "Biểu mẫu có"
+      error: "lỗi"
