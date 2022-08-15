@@ -4,3 +4,6 @@ valid:
   name_max_len: 50
   email_max_len: 255
   password_min_len: 6
+hotel:
+  phone_number: "(12) 345 67890"
+  email: "info.colorlib@gmail.com"

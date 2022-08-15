@@ -2,42 +2,16 @@
 @import 'bootstrap';
 @import 'color.scss';
 
-/* universal */
-body {
-  padding-top: 60px;
-}
-
-section {
-  overflow: auto;
-}
-
-textarea {
-  resize: vertical;
-}
-
-.center {
-  text-align: center;
-  h1 {
-    margin-bottom: 10px;
-  }
-}
-
 /* typography */
+ul {
+  margin: 0;
+}
 
-h1 {
+h1.title {
   font-size: 3em;
   letter-spacing: -2px;
   margin-bottom: 30px;
   text-align: center;
-}
-
-h2 {
-  font-size: 1.2em;
-  letter-spacing: -1px;
-  margin-bottom: 30px;
-  text-align: center;
-  font-weight: normal;
-  color: $gray-light;
 }
 
 @mixin box_sizing {
@@ -50,6 +24,7 @@ h2 {
 .form-container {
   width: 360px;
   margin: auto;
+  margin-top: 30px;
 }
 
 input,
