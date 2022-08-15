@@ -17,34 +17,18 @@
           <%= link_to "Home", admin_root_path, :class=>"nav-link" %>
         </li>
       </ul>
-      <!-- Right navbar links -->
       <ul class="navbar-nav ml-auto">
+        <div class="dropdown dropdown-menu-left" style="width:200px">
+          <span class="dropdown-toggle " id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">EN</span>
+          <div class="dropdown-menu " aria-labelledby="dropdownMenuButton">
+            <li><%= link_to "ENGLISH", locale: :en %></li>
+            <li><%= link_to "VIETNAMESE", locale: :vi %></li>
+          </div>
+        </div>
         <!-- Navbar Search -->
         <li class="nav-item">
           <img src="https://avatars.githubusercontent.com/u/29994885?s=64&v=4" class="direct-chat-img">
         </li>
-        <div class="dropdown">
-          <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Dropdown button
-          </button>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
-          </div>
-        </div>
-        <div class="language-option">
-          <span>
-            <%= t(".language")%>
-            <i class="fa fa-angle-down"></i>
-          </span>
-          <div class="">
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-              <li><%= link_to "ENGLISH", locale: :en %></li>
-              <li><%= link_to "VIETNAMESE", locale: :vi %></li>
-            </ul>
-          </div>
-        </div>
       </ul>
     </nav>
     <!-- /.navbar -->
@@ -69,13 +53,13 @@
             <li class="nav-item menu-open">
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <%= link_to t(".rooms"), admin_rooms_path, :class=>"nav-link active" %>
+                  <%= link_to t(".rooms"), admin_room_types_path, :class=>"nav-link active" %>
                 </li>
                 <li class="nav-item">
-                  <%= link_to "Bookings", admin_bookings_path, :class=>"nav-link active" %>
+                  <%= link_to t(".bookings"), admin_bookings_path, :class=>"nav-link active" %>
                 </li>
                 <li class="nav-item">
-                  <%= link_to "Users", admin_users_path, :class=>"nav-link active" %>
+                  <%= link_to t(".users"), admin_users_path, :class=>"nav-link active" %>
                 </li>
               </ul>
             </li>
@@ -85,6 +69,8 @@
       </div>
       <!-- /.sidebar -->
     </aside>
-    <%= yield %>
+    <div style="margin-left:var(--side-bar-width)">
+      <%= yield %>
+    </div>
   </body>
 </html>

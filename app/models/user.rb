@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   attr_accessor :remember_token
 
+  enum role: {user: 0, admin: 1}
   has_many :payments, dependent: :destroy
   has_many :bookings, dependent: :destroy
   has_secure_password
@@ -18,7 +19,6 @@ class User < ApplicationRecord
   validates :password, presence: true,
                        length: {minimum: Settings.valid.password_min_len},
                        allow_nil: true
-
   class << self
     def digest string
       cost = if ActiveModel::SecurePassword.min_cost
@@ -32,14 +32,6 @@ class User < ApplicationRecord
     def new_token
       SecureRandom.urlsafe_base64
     end
-  end
-
-  def admin?
-    role == 1
-  end
-
-  def user?
-    role.zero?
   end
 
   def remember

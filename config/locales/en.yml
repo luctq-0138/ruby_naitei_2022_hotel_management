@@ -1,7 +1,6 @@
 en:
   users:
     require_login: "Please log in"
-    require_login: "Please log in"
     new:
       welcome_hotel: "Welcome to my hotel"
       sign_up: "Sign Up"
@@ -48,6 +47,37 @@ en:
       rooms_count_form: "Rooms"
       rooms_opt: "Room"
       submit_btn: "Check Availability"
+  admin:
+    bookings:
+      index:
+        booking_date: Booking Date
+        duration_of_stay: Duration of Stay
+        check_in_date: Check In Date
+        check_out_date: Check Out Date
+        total_rooms_booked: Total Rooms Booked
+        total_price: Total Price
+        status_booking: Status Booking
+        booking_owner: Booking Owner
+        booking_reject: Rejected Reason
+        booking_rate: Booking Rate
+        total_price: Total Price
+        actions: Actions
+    users:
+      index:
+        name: Name
+        email: Email
+        address: Address
+        phone_number: Phone Number
+        status: Status
+        actions: Actions
+    room_types:
+        index:
+          image: Thumbnails
+          name:  Name
+          price: Price
+          area: Area
+          capacity: Capacity
+          actions: Actions
   layouts:
     header_login_signup:
       booking: "Booking"
@@ -64,6 +94,7 @@ en:
       logout: "Log out"
 
     application_admin:
+      language: "EN"
       dashboard: "Dashboard"
       users: "Users"
       user_show: "User"

@@ -134,3 +134,18 @@ h3.list_rooms {
   margin-top: 0px;
   margin-bottom: 30px;
 }
+.rooms_table_image {
+  height: 100px;
+}
+.delete-icon,
+.edit-icon {
+  cursor: pointer;
+  font-size: 20px !important;
+}
+.delete-icon {
+  color: red;
+  margin-right: 20px;
+}
+thead > tr > th {
+  white-space: nowrap;
+}

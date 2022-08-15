@@ -1,7 +1,7 @@
-class RoomTypesController < ApplicationController
+class Admin::RoomTypesController < Admin::BaseController
   def index
     @pagy, @room_types = pagy RoomType.all, page: params[:page],
-                                            items: Settings.page.default
+                                            items: Settings.page.admin_rooms_tb_size
   end
 
   def show
@@ -10,7 +10,7 @@ class RoomTypesController < ApplicationController
       @list_rooms = @room_type.rooms
     else
       flash[:danger] = t ".find_fail"
-      redirect_to room_types_path
+      redirect_to admin_room_types_path
     end
   end
 end
