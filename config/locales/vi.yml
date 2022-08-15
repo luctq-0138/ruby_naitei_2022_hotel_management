@@ -1,5 +1,6 @@
 vi:
   users:
+    require_login: "Xin hãy đăng nhập"
     new:
       welcome_hotel: "Chào mừng đến với khách sạn của chúng tôi"
       sign_up: "Đăng ký"

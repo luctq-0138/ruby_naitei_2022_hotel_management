@@ -37,7 +37,6 @@ body {
   height: 100%;
   font-family: 'Cabin', sans-serif;
   -webkit-font-smoothing: antialiased;
-  font-smoothing: antialiased;
 }
 h1,
 h2,
@@ -2128,7 +2127,7 @@ ol {
     position: absolute;
     left: 0;
     top: 60px;
-    width: 100px;
+    width: 120px !important;
     background: #ffffff;
     display: block;
     padding: 10px 15px;

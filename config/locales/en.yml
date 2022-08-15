@@ -1,5 +1,6 @@
 en:
   users:
+    require_login: "Please log in"
     new:
       welcome_hotel: "Welcome to my hotel"
       sign_up: "Sign Up"

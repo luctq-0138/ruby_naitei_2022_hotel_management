@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  include SessionsHelper
   before_action :set_locale
   def set_locale
     locale = params[:locale].to_s.strip.to_sym
@@ -8,5 +9,11 @@ class ApplicationController < ActionController::Base
 
   def default_url_options
     {locale: I18n.locale}
+  end
+
+  def must_be_user
+    return if current_user.role.zero?
+
+    redirect_back(fallback_location: admin_root_path)
   end
 end
