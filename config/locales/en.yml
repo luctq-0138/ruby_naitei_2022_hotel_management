@@ -1,5 +1,6 @@
 en:
   users:
+    require_login: "Please log in"
     new:
       welcome_hotel: "Welcome to my hotel"
       sign_up: "Sign Up"
@@ -29,3 +30,9 @@ en:
         password: "Password"
         btn_submit: "Log in"
         remember: "Remember me on this computer"
+    create:
+      login_success: "Wellcome to the my hotel"
+      login_fail: "Invalid email/password combination"
+  layouts:
+    header_login_signup:
+      booking: "Booking now"

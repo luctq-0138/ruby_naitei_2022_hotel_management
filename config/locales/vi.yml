@@ -1,5 +1,6 @@
 vi:
   users:
+    require_login: "Xin hãy đăng nhập"
     new:
       welcome_hotel: "Chào mừng đến với khách sạn của chúng tôi"
       sign_up: "Đăng ký"
@@ -25,7 +26,13 @@ vi:
         password: "Mật khẩu"
         btn_submit: "Đăng nhập"
         remember: "Ghi nhớ mật khẩu"
+    create:
+      login_success: "Chào mừng đến với khách sạn của chúng tôi"
+      login_fail: "Email hoặc mật khẩu đang bị sai"
   shared:
     error_messages:
       intro: "Biểu mẫu có"
       error: "lỗi"
+  layouts:
+    header_login_signup:
+      booking: "Đặt chỗ ngay"

@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
+  layout "layouts/application_login_signup", only: :new
   before_action :find_user, except: %i(index new create)
+  before_action :logged_in_user, :must_be_user, except: %i(create new)
 
   def new
     @user = User.new
@@ -10,10 +12,10 @@ class UsersController < ApplicationController
   def create
     @user = User.new user_params
     if @user.save
-      flash[:info] = t ".create_success"
+      flash.now[:info] = t ".create_success"
       redirect_to login_path
     else
-      flash[:danger] = t ".create_fail"
+      flash.now[:danger] = t ".create_fail"
       render :new
     end
   end

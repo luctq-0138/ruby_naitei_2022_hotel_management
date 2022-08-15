@@ -1,5 +1,5 @@
 <div class="form-container">
-  <h1><%= t(".heading") %></h1>
+  <h1 class="title"><%= t(".heading") %></h1>
   <div>
     <%= form_for(:session, url: login_path) do |f| %>
       <%= f.label :email, t(".form.email") %>
