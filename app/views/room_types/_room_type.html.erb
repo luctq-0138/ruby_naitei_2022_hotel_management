@@ -1,0 +1,26 @@
+<div class="col-lg-4 col-md-6">
+  <div class="room-item">
+    <%= image_tag(room_type.image, alt: "")%>
+    <div class="ri-text">
+      <h4><%= room_type.name %></h4>
+      <h3><%= room_type.cost %>$<span>/<%= t ".pernight" %></span></h3>
+      <table>
+        <tbody>
+          <tr>
+            <td class="r-o"><%= t ".size" %>:</td>
+            <td><%= room_type.size %><% t ".m2" %> </td>
+          </tr>
+          <tr>
+            <td class="r-o"><%= t ".capacity" %>:</td>
+            <td><%= t ".max-person" %> <%= room_type.capacity %></td>
+          </tr>
+          <tr>
+            <td class="r-o"><%= t ".service" %>:</td>
+            <td><%= room_type.services %></td>
+          </tr>
+        </tbody>
+      </table>
+      <%= link_to t(".more_details"), room_type, :class => "primary-btn" %>
+    </div>
+  </div>
+</div>

@@ -77,3 +77,60 @@ select {
 .menu-item .nav-menu .mainmenu li:hover .dropdown {
   transition: none !important;
 }
+.page-item.active .page-link {
+  background-color: #dfa974 !important;
+  color: #ffffff !important;
+}
+
+.pagination > li > a {
+  position: relative;
+  float: left;
+  padding: 6px 12px;
+  margin-left: -1px;
+  line-height: 1.428571429;
+  text-decoration: none;
+  color: #707079 !important;
+  border: 1px solid #efd4b9 !important;
+  border-radius: 2px;
+}
+
+.pagination > li > a:hover {
+  background-color: #dfa974 !important;
+  color: #ffffff !important;
+}
+
+.grid-container {
+  display: grid;
+  column-gap: 20px;
+  row-gap: 20px;
+  grid-template-columns: auto auto auto auto;
+}
+
+.grid-item {
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #707079;
+  border: 1px solid #efd4b9;
+  padding: 5px;
+  text-align: center;
+}
+.grid-item:hover {
+  cursor: pointer;
+  background-color: #dfa974;
+  color: #ffffff;
+}
+
+.grid-item .not-available {
+  background-color: #dfa974;
+  color: #ffffff;
+}
+
+.grid-item .not-available:hover {
+  background-color: #dfa974;
+  color: #ffffff;
+  cursor: default;
+}
+
+h3.list_rooms {
+  margin-top: 0px;
+  margin-bottom: 30px;
+}

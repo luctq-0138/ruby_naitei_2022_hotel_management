@@ -48,8 +48,14 @@ ActiveRecord::Schema.define(version: 2022_08_14_154203) do
   end
 
   create_table "room_types", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.string "type_name", null: false
-    t.text "type_description"
+    t.string "name", null: false
+    t.decimal "cost", precision: 10, scale: 2
+    t.integer "size"
+    t.integer "capacity"
+    t.string "services"
+    t.integer "star_rate"
+    t.string "image"
+    t.text "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -57,10 +63,7 @@ ActiveRecord::Schema.define(version: 2022_08_14_154203) do
   create_table "rooms", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.integer "number", null: false
     t.string "name"
-    t.decimal "cost", precision: 10, scale: 2
-    t.integer "star_rate"
     t.boolean "is_available", default: true
-    t.string "image"
     t.bigint "room_type_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
