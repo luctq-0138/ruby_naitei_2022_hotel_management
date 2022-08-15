@@ -1,2 +1,8 @@
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
+.main-header {
+  background: white;
+  border-bottom: 1px solid #dee2e6 !important;
+  z-index: 9999999;
+  border-radius: none !important;
+}

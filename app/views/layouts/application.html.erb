@@ -9,6 +9,13 @@
     <%= javascript_pack_tag "application", "data-turbolinks-track": "reload" %>
   </head>
   <body>
+    <!-- Page Preloder -->
+    <%# <div id="preloder">
+      <div class="loader"></div>
+    </div> %>
+    <%= render "layouts/header"%>
+    <!-- Header End -->
     <%= yield %>
+    <%= render "layouts/footer"%>
   </body>
 </html>

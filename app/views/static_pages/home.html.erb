@@ -1,5 +1,55 @@
-<h1>StaticPages#home</h1>
-<p>Find me in app/views/static_pages/home.html.erb</p>
-<% if logged_in? %>
-  <%= button_to "Logout", logout_path, method: :delete, :style=>"width: inherit;" %>
-<% end %>
+<!-- Hero Section Begin -->
+<section class="hero-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="hero-text">
+          <h1>KingH<br/>
+            <%= t ".hero_title" %></h1>
+          <p>
+            <%= t ".hero_subtitle" %>
+          </p>
+          <a href="#" class="primary-btn"><%= t(".btn_discover") %></a>
+        </div>
+      </div>
+      <div class="col-xl-4 col-lg-5 offset-xl-2 offset-lg-1">
+        <div class="booking-form">
+          <h3>Booking Your Hotel</h3>
+          <form action="#">
+            <div class="check-date">
+              <label for="date-in"><%= t(".check_in_form") %>:</label>
+              <input type="date" class="date-input" id="date-in" />
+              <i class="icon_calendar"></i>
+            </div>
+            <div class="check-date">
+              <label for="date-out"><%= t(".check_out_form") %>:</label>
+              <input type="date" class="date-input" id="date-out" />
+              <i class="icon_calendar"></i>
+            </div>
+            <div class="select-option">
+              <label for="guest"><%= t(".guest_form") %>:</label>
+              <select id="guest">
+                <option value="">2 <%= t(".guest_opt") %></option>
+                <option value="">3 <%= t(".guest_opt") %></option>
+              </select>
+            </div>
+            <div class="select-option">
+              <label for="room"><%= t(".rooms_count_form") %>:</label>
+              <select id="room">
+                <option value="">1 <%= t(".rooms_opt") %></option>
+                <option value="">2 <%= t(".rooms_opt") %></option>
+              </select>
+            </div>
+            <button type="submit"><%= t(".submit_btn") %></button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-slider owl-carousel">
+    <div class="hs-item set-bg" data-setbg="https://firebasestorage.googleapis.com/v0/b/hotel-management-a5ac1.appspot.com/o/about-3.jpg?alt=media&token=fe98e8e7-87df-4665-87ce-aff003bc7132"></div>
+    <div class="hs-item set-bg" data-setbg="https://firebasestorage.googleapis.com/v0/b/hotel-management-a5ac1.appspot.com/o/about-3.jpg?alt=media&token=fe98e8e7-87df-4665-87ce-aff003bc7132"></div>
+    <div class="hs-item set-bg" data-setbg="https://firebasestorage.googleapis.com/v0/b/hotel-management-a5ac1.appspot.com/o/about-3.jpg?alt=media&token=fe98e8e7-87df-4665-87ce-aff003bc7132"></div>
+  </div>
+</section>
+<!-- Hero Section End -->

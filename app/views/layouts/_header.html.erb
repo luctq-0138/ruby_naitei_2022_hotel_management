@@ -1,0 +1,81 @@
+<!-- Header Section Begin -->
+<header class="header-section">
+  <div class="top-nav">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <ul class="tn-left">
+            <li>
+              <i class="fa fa-phone"></i>
+              (12) 345 67890
+            </li>
+            <li>
+              <i class="fa fa-envelope"></i>
+              admin@gmail.com
+            </li>
+          </ul>
+        </div>
+        <div class="col-lg-6">
+          <div class="tn-right">
+            <div class="top-social">
+              <a href="#"><i class="fa fa-facebook"></i></a>
+              <a href="#"><i class="fa fa-twitter"></i></a>
+              <a href="#"><i class="fa fa-tripadvisor"></i></a>
+              <a href="#"><i class="fa fa-instagram"></i></a>
+            </div>
+            <a href="#" class="bk-btn"><%= t ".booking_btn" %></a>
+            <div class="language-option">
+              <span>
+                <%= t(".language") %>
+                <i class="fa fa-angle-down"></i>
+              </span>
+              <div class="flag-dropdown">
+                <ul>
+                  <li><%= link_to "ENGLISH", locale: :en %></li>
+                  <li><%= link_to "VIETNAMESE", locale: :vi %></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="menu-item">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-2">
+          <h1>KingH</h1>
+        </div>
+        <div class="col-lg-10">
+          <div class="nav-menu">
+            <nav class="mainmenu">
+              <ul>
+                <li id="home_nav"><%= link_to t(".home"),root_path %></li>
+                <li id="room_nav"><%= link_to t(".room"),rooms_path %></li>
+                <li id="about_nav"><%= link_to t(".about"),about_us_path %></li>
+                <li id="blog_nav"><%= link_to t(".blog"),blog_path %></li>
+                <li id="contact_nav"><%= link_to t(".contact"),contact_path %></li>
+                <%if logged_in? %>
+                  <li class="avatar_list_item">
+                    <div>
+                      <img class="user_avatar" src="https://firebasestorage.googleapis.com/v0/b/hotel-management-a5ac1.appspot.com/o/faces-1.jpg?alt=media&token=ee3913a3-75fd-4107-8fa7-988f251046d0" alt="">
+                      <ul class="dropdown">
+                        <li class="user_name">@<%= current_user.name %></li>
+                        <li><%=link_to "Profile","#" %></li>
+                        <li><%=link_to "Logout",logout_path, method: :delete %></li>
+                      </ul>
+                    </div>
+                  </li>
+                <%else %>
+                  <li><%= link_to t(".signup"),signup_path %></li>
+                  <li><%= link_to t(".login"),login_path %></li>
+                <%end %>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

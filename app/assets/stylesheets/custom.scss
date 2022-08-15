@@ -53,3 +53,27 @@ input {
   width: auto;
   margin-left: 0;
 }
+a:hover,
+a:focus {
+  text-decoration: none !important;
+}
+input[type='date'] {
+  padding: 10px;
+}
+select {
+  padding: 10px;
+  background: white;
+}
+.user_name {
+  font-size: 16px;
+  color: #19191a;
+  display: block;
+  text-align: left;
+  padding: 8px 15px;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.menu-item .nav-menu .mainmenu li:hover .dropdown {
+  transition: none !important;
+}
