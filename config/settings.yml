@@ -7,3 +7,5 @@ valid:
 hotel:
   phone_number: "(12) 345 67890"
   email: "info.colorlib@gmail.com"
+page:
+  default_size: 6

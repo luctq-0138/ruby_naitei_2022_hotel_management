@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     get "/login", to: "sessions#new"
     post "/login", to: "sessions#create"
     delete "/logout", to: "sessions#destroy"
+    resources :room_types
     resources :users
     namespace :admin do
       root to: "static_pages#index"

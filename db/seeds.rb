@@ -28,37 +28,43 @@ end
 
 #Room Type
 
-room_type_names = ["Premium King Room", "Deluxe Room", "Double Room", "Luxury Room", "Room With View", "Small View"]
-(0..5).each do |i|
-  RoomType.create!(type_name: room_type_names[i],
-                 type_description: Faker::Lorem.paragraph(sentence_count: 30))
-end
-
-#Room
-
 image = [
   "https://firebasestorage.googleapis.com/v0/b/hotel-management-a5ac1.appspot.com/o/room-1%20(1).jpg?alt=media&token=ee37e09a-cf2d-45cd-aca1-1f698b6bcb86",
   "https://firebasestorage.googleapis.com/v0/b/hotel-management-a5ac1.appspot.com/o/room-12.jpg?alt=media&token=bc8db994-80e0-493e-ab0f-d9668b566ce5",
   "https://firebasestorage.googleapis.com/v0/b/hotel-management-a5ac1.appspot.com/o/room-2%20(1).jpg?alt=media&token=da7e6531-56f5-4e1d-a708-3534a3a9dcbd",
   "https://firebasestorage.googleapis.com/v0/b/hotel-management-a5ac1.appspot.com/o/room-8.jpg?alt=media&token=7d10b914-0410-4789-a8bf-c2d36b248de3",
-  "https://firebasestorage.googleapis.com/v0/b/hotel-management-a5ac1.appspot.com/o/room-7.jpg?alt=media&token=1d312e95-41b8-4e98-9e31-ec3e05452c5f",
   "https://firebasestorage.googleapis.com/v0/b/hotel-management-a5ac1.appspot.com/o/room-6.jpg?alt=media&token=1690b2f7-9ec4-418b-9f1a-b5d187c784cc",
   "https://firebasestorage.googleapis.com/v0/b/hotel-management-a5ac1.appspot.com/o/room-5.jpg?alt=media&token=5645738a-99f2-4cea-b6ea-9677fc953f2e",
   "https://firebasestorage.googleapis.com/v0/b/hotel-management-a5ac1.appspot.com/o/room-4.jpg?alt=media&token=39d6d8a1-68af-4980-8133-2ae66827f39c",
   "https://firebasestorage.googleapis.com/v0/b/hotel-management-a5ac1.appspot.com/o/room-3.jpg?alt=media&token=1fc309af-0f29-423a-94aa-8e6736cc725e"
 ]
+
+room_type_names = ["Premium King Room", "Deluxe Room", "Double Room", "Luxury Room", "Room With View", "Small View"]
+(0..5).each do |i|
+  cost = Faker::Commerce.price
+  size = Faker::Number.between(from: 25, to: 35)
+  capacity = Faker::Number.between(from: 2, to: 4)
+  star_rate = Faker::Number.between(from: 1, to: 5)
+  services = "Wifi, Television, Bathroom,..."
+  RoomType.create!(name: room_type_names[i],
+                   size: size,
+                   capacity: capacity,
+                   cost: cost,
+                   star_rate: star_rate,
+                   image: image[i],
+                   services: services,
+                   description: Faker::Lorem.paragraph(sentence_count: 30))
+end
+
+#Room
+
 room_types = RoomType.all
-5.times do
-    number = Faker::Number.between(from: 1000, to: 199)
-    cost = Faker::Number.decimal(l_digits: 2)
-    star_rate = Faker::Number.between(from: 1, to: 5)
-    room_types.each do |room_type|
-      room_type.rooms.create!(number: number,
-                          name: "#{room_type.type_name} - #{number}",
-                          cost: cost,
-                          star_rate: star_rate,
-                          image: image.shuffle.first )
-    end
+12.times do |n|
+  room_types.each do |room_type|
+    number = Faker::Number.between(from: 100, to: 300)
+    room_type.rooms.create!(number: number,
+                            name: "#{room_type.name} - #{number}")
+  end
 end
 
 #Booking and Room_booked
