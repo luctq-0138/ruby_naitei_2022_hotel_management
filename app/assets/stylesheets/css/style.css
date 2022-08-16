@@ -146,7 +146,7 @@ ol {
 .primary-btn {
   display: inline-block;
   font-size: 13px;
-  color: #ffffff;
+
   text-transform: uppercase;
   letter-spacing: 2px;
   font-weight: 700;
@@ -340,7 +340,7 @@ ol {
   font-weight: 700;
   padding: 16px 28px 15px;
   background: #dfa974;
-  color: #ffffff;
+
   text-transform: uppercase;
   letter-spacing: 2px;
 }
@@ -372,7 +372,7 @@ ol {
   position: absolute;
   left: 0;
   top: 60px;
-  width: 100px;
+  width: fit-content;
   background: #ffffff;
   display: block;
   padding: 10px 15px;
@@ -417,6 +417,7 @@ ol {
 .menu-item .nav-menu .mainmenu {
   display: inline-block;
 }
+
 .menu-item .nav-menu .mainmenu li {
   list-style: none;
   display: inline-block;
@@ -430,9 +431,18 @@ ol {
   opacity: 1;
 }
 .menu-item .nav-menu .mainmenu li:hover .dropdown {
-  top: 77px;
+  top: 34px;
   opacity: 1;
   visibility: visible;
+  left: -150px;
+}
+.mainmenu > ul{
+  display: flex;
+  align-items: center;
+}
+.mainmenu .user_avatar{
+  border-radius: 50% !important;
+  height: 34px;
 }
 .menu-item .nav-menu .mainmenu li a {
   font-size: 16px;
@@ -494,6 +504,9 @@ ol {
 .menu-item .nav-menu .mainmenu li .dropdown li a:after {
   display: none;
 }
+.avatar_list_item > ul{
+  transition: none !important;
+}
 .menu-item .nav-menu .nav-right {
   display: inline-block;
   margin-left: 43px;
@@ -516,7 +529,6 @@ ol {
 
 .hero-section {
   position: relative;
-  padding-top: 60px;
   padding-bottom: 100px;
 }
 .hero-section .container {
@@ -527,14 +539,12 @@ ol {
   padding-top: 145px;
 }
 .hero-text h1 {
-  font-size: 80px;
-  line-height: 90px;
-  color: #ffffff;
+  font-size: 50px;
   margin-bottom: 16px;
 }
 .hero-text p {
   font-size: 18px;
-  color: #ffffff;
+
   line-height: 28px;
   margin-bottom: 35px;
 }
@@ -710,13 +720,13 @@ ol {
   background: #dfa974;
 }
 .service-item:hover i {
-  color: #ffffff;
+
 }
 .service-item:hover h4 {
-  color: #ffffff;
+
 }
 .service-item:hover p {
-  color: #ffffff;
+
 }
 .service-item i {
   display: inline-block;
@@ -771,7 +781,7 @@ ol {
   transition: all 0.5s;
 }
 .hp-room-items .hp-room-item .hr-text h3 {
-  color: #ffffff;
+
   margin-bottom: 15px;
 }
 .hp-room-items .hp-room-item .hr-text h2 {
@@ -786,14 +796,14 @@ ol {
   font-family: 'Cabin', sans-serif;
   font-size: 16px;
   font-weight: 400;
-  color: #ffffff;
+
 }
 .hp-room-items .hp-room-item .hr-text table {
   margin-bottom: 30px;
 }
 .hp-room-items .hp-room-item .hr-text table tbody tr td {
   font-size: 16px;
-  color: #ffffff;
+
   line-height: 36px;
 }
 .hp-room-items .hp-room-item .hr-text table tbody tr td.r-o {
@@ -908,7 +918,7 @@ ol {
   font-size: 16px;
   line-height: 40px;
   text-align: center;
-  color: #ffffff;
+
   border: 1px solid #5a4d48;
   border-radius: 50%;
   -webkit-transition: all 0.3s;
@@ -956,7 +966,7 @@ ol {
 }
 .footer-section .footer-text .ft-newslatter .fn-form input {
   width: 100%;
-  height: 50px;
+  height: 50px !important;
   border-radius: 2px;
   background: #393d4a;
   border: none;
@@ -970,7 +980,7 @@ ol {
   top: 0;
   font-size: 16px;
   background: #dfa974;
-  color: #ffffff;
+
   padding: 0 16px;
   height: 50px;
   border: none;
@@ -1085,7 +1095,7 @@ ol {
   text-align: center;
 }
 .about-page-services .ap-service-item .api-text h3 {
-  color: #ffffff;
+
 }
 /*---------------------
   Video Section
@@ -1100,12 +1110,12 @@ ol {
 }
 .video-section .video-text h2 {
   font-size: 48px;
-  color: #ffffff;
+
   margin-bottom: 16px;
 }
 .video-section .video-text p {
   font-size: 20px;
-  color: #ffffff;
+
   margin-bottom: 40px;
 }
 .video-section .video-text .play-btn {
@@ -1171,7 +1181,7 @@ ol {
   opacity: 0;
 }
 .gallery-item .gi-text h3 {
-  color: #ffffff;
+
 }
 /*---------------------
   Room Section
@@ -1242,7 +1252,7 @@ ol {
 }
 .room-pagination a:hover {
   background: #dfa974;
-  color: #ffffff;
+
 }
 /*-----------------------
   Room Details Section
@@ -1280,7 +1290,7 @@ ol {
 }
 .room-details-item .rd-text .rd-title .rdt-right a {
   display: inline-block;
-  color: #ffffff;
+
   font-size: 13px;
   text-transform: uppercase;
   font-weight: 700;
@@ -1449,7 +1459,7 @@ ol {
   font-size: 13px;
   font-weight: 700;
   text-transform: uppercase;
-  color: #ffffff;
+
   letter-spacing: 2px;
   background: #dfa974;
   border: none;
@@ -1568,7 +1578,7 @@ ol {
 }
 .blog-item .bi-text .b-tag {
   display: inline-block;
-  color: #ffffff;
+
   font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -1581,11 +1591,11 @@ ol {
   margin-bottom: 18px;
 }
 .blog-item .bi-text h4 a {
-  color: #ffffff;
+
 }
 .blog-item .bi-text .b-time {
   font-size: 12px;
-  color: #ffffff;
+
   text-transform: uppercase;
   letter-spacing: 3px;
 }
@@ -1609,7 +1619,7 @@ ol {
 }
 .bd-hero-text span {
   font-size: 12px;
-  color: #ffffff;
+
   background: #dfa974;
   font-weight: 500;
   text-transform: uppercase;
@@ -1620,7 +1630,7 @@ ol {
 }
 .bd-hero-text h2 {
   font-size: 44px;
-  color: #ffffff;
+
   line-height: 54px;
   margin-top: 30px;
   margin-bottom: 12px;
@@ -1708,7 +1718,7 @@ ol {
   margin-right: 6px;
 }
 .blog-details-text .tag-share .tags a:hover {
-  color: #ffffff;
+
   background: #dfa974;
 }
 .blog-details-text .tag-share .social-share {
@@ -1818,7 +1828,7 @@ ol {
 }
 .blog-details-text .comment-option .single-comment-item .sc-text a:hover {
   background: #dfa974;
-  color: #ffffff;
+
   border-color: #dfa974;
 }
 .blog-details-text .leave-comment h4 {
@@ -1863,7 +1873,7 @@ ol {
   font-size: 13px;
   font-weight: 700;
   text-transform: uppercase;
-  color: #ffffff;
+
   letter-spacing: 2px;
   background: #dfa974;
   border: none;
@@ -1965,7 +1975,7 @@ ol {
   font-size: 13px;
   font-weight: 700;
   text-transform: uppercase;
-  color: #ffffff;
+
   letter-spacing: 2px;
   background: #dfa974;
   border: none;
@@ -2179,7 +2189,7 @@ ol {
     font-weight: 700;
     padding: 16px 28px 15px;
     background: #dfa974;
-    color: #ffffff;
+
     text-transform: uppercase;
     letter-spacing: 2px;
   }
