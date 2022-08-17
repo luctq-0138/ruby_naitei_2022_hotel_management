@@ -13,9 +13,9 @@ Rails.application.routes.draw do
     resources :users
     namespace :admin do
       root to: "static_pages#index"
-      get "/rooms", to: "static_pages#rooms"
-      get "/bookings", to: "static_pages#bookings"
-      get "/users", to: "static_pages#users"
+      resources :room_types
+      resources :bookings
+      resources :users
       resources :static_pages
     end
   end

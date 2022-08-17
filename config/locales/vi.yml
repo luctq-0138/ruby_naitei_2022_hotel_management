@@ -53,6 +53,37 @@ vi:
       rooms_count_form: "Số phòng"
       rooms_opt: "Phòng"
       submit_btn: "Tìm kiếm phòng trống"
+  admin:
+    bookings:
+      index:
+        booking_date: Ngày đặt phòng
+        duration_of_stay: Thời gian ở
+        check_in_date: Ngày nhận phòng
+        check_out_date: Ngày trả phòng
+        total_rooms_booked: Số phòng đã đặt
+        total_price: Tổng giá
+        status_booking: Trạng thái
+        booking_owner: Người đặt phòng
+        booking_reject: Lý do từ chối
+        booking_rate: Đánh giá của khách hàng
+        total_price: Tổng giá
+        actions: Thao tác
+    users:
+      index:
+        name: Tên
+        email: Email
+        address:  Địa chỉ
+        phone_number: Số điện thoại
+        status: Trạng thái tài khoản
+        actions: Thao tác
+    room_types:
+        index:
+          image: Hình ảnh
+          name: Tên
+          price: Giá
+          area: Diện tích
+          capacity: Sức chứa
+          actions: Thao tác
 
   layouts:
     header_login_signup:
@@ -69,6 +100,7 @@ vi:
       signup: "Đăng ký"
       logout: "Đăng xuất"
     application_admin:
+      language: "EN"
       dashboard: "Bảng điều khiển"
       users: "Người dùng"
       rooms: "Phòng"

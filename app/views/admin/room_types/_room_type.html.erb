@@ -1,0 +1,11 @@
+<tr>
+  <td><%= image_tag room_type.image, class: "rooms_table_image" %></td>
+  <td><%= room_type.name %></td>
+  <td><%= room_type.cost %>$/<%= t ".pernight" %></td>
+  <td><%= room_type.size %><% t ".m2" %></td>
+  <td><%= room_type.capacity %></td>
+  <td>
+    <i class="fa fa-trash icon delete-icon" aria-hidden="true"></i>
+    <i class="fa fa-pencil-square icon edit-icon" aria-hidden="true"></i>
+  </td>
+</tr>

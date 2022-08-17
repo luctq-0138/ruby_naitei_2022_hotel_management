@@ -6,7 +6,7 @@ module SessionsHelper
   def handle_login user
     log_in user
     params[:session][:remember_me] == "1" ? remember(user) : forget(user)
-    if user.role.zero?
+    if user.user?
       redirect_to root_url
     else
       redirect_to admin_root_url

@@ -9,3 +9,7 @@ hotel:
   email: "info.colorlib@gmail.com"
 page:
   default_size: 6
+  admin_user_tb_size: 15
+  admin_booking_tb_size: 9
+  admin_rooms_tb_size: 5
+  default_size: 6
