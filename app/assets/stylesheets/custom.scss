@@ -196,6 +196,21 @@ booking_list_section {
 .badge-warning {
   background-color: #ffc107 !important;
 }
+.booking-form .rails-button-submit {
+  cursor: pointer;
+  display: block;
+  font-size: 14px;
+  text-transform: uppercase;
+  border: 1px solid #dfa974;
+  border-radius: 2px;
+  color: #dfa974;
+  font-weight: 500;
+  background: transparent;
+  width: 100%;
+  height: 46px;
+  margin-top: 30px;
+  padding: 0;
+}
 .badge-info {
   background-color: #17a2b8 !important;
 }

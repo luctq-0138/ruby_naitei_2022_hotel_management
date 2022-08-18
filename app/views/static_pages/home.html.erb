@@ -4,7 +4,7 @@
     <div class="row">
       <div class="col-lg-6">
         <div class="hero-text">
-          <h1>KingH<br/>
+          <h1>King Hotel<br/>
             <%= t ".hero_title" %></h1>
           <p>
             <%= t ".hero_subtitle" %>
@@ -14,34 +14,26 @@
       </div>
       <div class="col-xl-4 col-lg-5 offset-xl-2 offset-lg-1 mt-5">
         <div class="booking-form">
-          <h3>Booking Your Hotel</h3>
-          <form action="#">
+          <h3><%= t(".btn_book") %></h3>
+          <%= form_for(:room_type, url: search_path) do |f| %>
             <div class="check-date">
-              <label for="date-in"><%= t(".check_in_form") %>:</label>
-              <input type="date" class="date-input" id="date-in" />
-              <i class="icon_calendar"></i>
+              <%= f.label :date_in, t(".check_in_form") %>
+              <%= f.text_field :date_in, class: "form-control date-input" %>
+              <i class="fa fa-calendar"></i>
             </div>
+            <div id="date_in" class="invalid"><%= t ".not_empty"%></div>
             <div class="check-date">
-              <label for="date-out"><%= t(".check_out_form") %>:</label>
-              <input type="date" class="date-input" id="date-out" />
-              <i class="icon_calendar"></i>
+              <%= f.label :date_out, t(".check_out_form") %>
+              <%= f.text_field :date_out, class: "date-input" %>
+              <i class="fa fa-calendar"></i>
             </div>
+            <div id="date_out" class="invalid"><%= t ".not_empty"%></div>
             <div class="select-option">
-              <label for="guest"><%= t(".guest_form") %>:</label>
-              <select id="guest">
-                <option value="">2 <%= t(".guest_opt") %></option>
-                <option value="">3 <%= t(".guest_opt") %></option>
-              </select>
+              <%= f.label :capacity, t(".guest_form") %>
+              <%=  select_tag(:capacity, options_for_select([[t('.guest_opt_1'),"1"], [t('.guest_opt_2'),"2"],[t('.guest_opt_3'),"3"],[t('.guest_opt_4'),"4"]])) %>
             </div>
-            <div class="select-option">
-              <label for="room"><%= t(".rooms_count_form") %>:</label>
-              <select id="room">
-                <option value="">1 <%= t(".rooms_opt") %></option>
-                <option value="">2 <%= t(".rooms_opt") %></option>
-              </select>
-            </div>
-            <button type="submit"><%= t(".submit_btn") %></button>
-          </form>
+            <%= f.submit  t(".submit_btn"), class: "rails-button-submit", data: { disable_with: false } %>
+          <% end %>
         </div>
       </div>
     </div>
