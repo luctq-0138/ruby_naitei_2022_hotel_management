@@ -5,12 +5,11 @@ import 'channels';
 import 'owl.carousel';
 require('jquery');
 require('bootstrap');
-
-Rails.start();
-Turbolinks.start();
-ActiveStorage.start();
 function importAll(r) {
   r.keys().forEach(r);
 }
 importAll(require.context('./admin/js', true, /\.js$/));
 importAll(require.context('./admin/js', true, /\.min\.js$/));
+Rails.start();
+Turbolinks.start();
+ActiveStorage.start();

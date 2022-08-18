@@ -11,7 +11,6 @@ class CreateBookings < ActiveRecord::Migration[6.1]
       t.text :refuse_reason
       t.integer :user_star_rate
       t.decimal :total_amount, null: false
-
       t.timestamps
     end
   end

@@ -284,7 +284,7 @@ ol {
   Header
 -----------------------*/
 
-.header-section.header-normal .menu-item {
+.header-section .menu-item {
   -webkit-box-shadow: 0px 12px 15px rgba(36, 11, 12, 0.05);
   box-shadow: 0px 12px 15px rgba(36, 11, 12, 0.05);
 }
@@ -539,10 +539,12 @@ ol {
   padding-top: 145px;
 }
 .hero-text h1 {
+  color: #ffffff;
   font-size: 50px;
   margin-bottom: 16px;
 }
 .hero-text p {
+  color: #ffffff;
   font-size: 18px;
 
   line-height: 28px;
