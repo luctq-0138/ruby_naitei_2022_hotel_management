@@ -13,6 +13,7 @@ en:
     create:
       create_success: "Sign up success"
       create_fail: "Sign up fail"
+      mail_notice: "Please check your email to complete the registration"
     find_user:
       find_fail: "User not found"
   shared:
@@ -21,7 +22,7 @@ en:
       error: "error"
   sessions:
     new:
-      heading: "Log in"
+      title: "Log in"
       new_user: "New user?"
       signup: "Sign up now!"
       forgot_password: "(Forgot password)"
@@ -33,9 +34,10 @@ en:
     create:
       login_success: "Welcome to our hotel"
       login_fail: "Email or password is invalid"
+      account_not_actived: "Account not activated. Check your email for the activation link."
   static_pages:
     home:
-      heading: "Welcome to my hotel"
+      title: "Welcome to my hotel"
       subheading: "The best hotel in the world"
       hero_title: "A Luxury Hotel"
       hero_subtitle: "Here are the best hotel booking sites, including recommendations for international travel and for finding low-priced hotel rooms."
@@ -50,6 +52,32 @@ en:
       rooms_count_form: "Rooms"
       rooms_opt: "Room"
       submit_btn: "Check Availability"
+    about:
+      about_us: "About us"
+      home: "Home"
+      welcome: "Welcome to KingH"
+      hotel_intro: "Built in 2015,this hotel is located in the center of Ha Noi, with easy access to the city’s tourist attractions. It offers tastefully decorated rooms."
+      offer_1: "20% Off On Accommodation."
+      offer_2: "Complimentary Daily Breakfast"
+      offer_3: "3 Pcs Laundry Per Day"
+      offer_4: "Free Wifi."
+      offer_5: "Discount 20% On F&B"
+      restaurant_services: "Restaurants Services"
+      travel_camping: "Travel & Camping"
+      event_party: "Event & Party"
+      discover_hotel: "Discover Our Hotel & Services."
+      enjoy: "Enjoy every moment with us"
+      our_gallery: "Our Gallery"
+      discover_work: "Discover Our Work"
+      room_luxury: "Room Luxury"
+    contact:
+      contact_info: "Contact Info"
+      contact_open: "We hope you are satisfied with our hotel and service. If you have any problem, feel free to contact us"
+      address: "Address"
+      phone: "Phone Number"
+      email: "Email"
+      fax: "Fax"
+      submit: "Submit"
   admin:
     bookings:
       index:
@@ -216,6 +244,8 @@ en:
         not_found_room_type: "Booking fail, not found room type"
       find_room:
         not_found_room:  "Booking fail, not found room"
+    find_booking:
+      not_found_booking: "Destroy fail, not found booking"
     index:
       booking_history: "Booking History"
       home: "Home"
@@ -229,7 +259,12 @@ en:
       booking_rate: "Booking rate"
       total_amount: "Total amount"
       actions: "Actions"
+      not_found_booking: "Not found any booking"
+    destroy:
+      destroy_success: "Destroy booking success"
+      destroy_fail: "Destroy booking fail"
     booking:
       pending: "Pending"
       approve: "Approve"
       refuse: "Refuse"
+      confirm_delete: "You sure cancel your booking?"

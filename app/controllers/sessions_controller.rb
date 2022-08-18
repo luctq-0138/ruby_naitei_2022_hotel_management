@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
   layout "layouts/application_login_signup", only: %i(create new)
-
+  before_action :not_logged_in, only: %i(create new)
   def new; end
 
   def create
@@ -23,5 +23,15 @@ class SessionsController < ApplicationController
     return unless logged_in?
 
     redirect_to root_path
+  end
+
+  def not_logged_in
+    return unless logged_in?
+
+    if current_user.user?
+      redirect_to root_url
+    else
+      redirect_to admin_root_url
+    end
   end
 end
