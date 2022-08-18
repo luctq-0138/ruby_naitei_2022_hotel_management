@@ -25,7 +25,12 @@ class BookingsController < ApplicationController
       room_type: params[:booking][:room_type]
     }
     session[:booking] = booking
-    redirect_to bookings_path
+    redirect_to new_booking_path
+  end
+
+  def index
+    @pagy, @bookings = pagy current_user.bookings.all, page: params[:page],
+                                         items: Settings.page.admin_booking_tb_size
   end
 
   private
@@ -40,7 +45,7 @@ class BookingsController < ApplicationController
     return booking if booking
 
     flash[:danger] = t ".booking_error"
-    redirect_to bookings_path
+    redirect_to new_booking_path
   end
 
   def handle_save_booking
@@ -49,7 +54,7 @@ class BookingsController < ApplicationController
       room = find_room room_id
       unless booking.room_bookeds.create(room: room)
         flash[:danger] = t ".booking_error"
-        redirect_to bookings_path
+        redirect_to new_booking_path
       end
     end
   end
@@ -59,7 +64,7 @@ class BookingsController < ApplicationController
     return room_type if room_type
 
     flash[:danger] = t ".not_found_room_type"
-    redirect_to bookings_path
+    redirect_to new_booking_path
   end
 
   def find_room room_id
@@ -67,6 +72,6 @@ class BookingsController < ApplicationController
     return room if room
 
     flash[:danger] = t
-    redirect_to bookings_path
+    redirect_to new_booki_path
   end
 end

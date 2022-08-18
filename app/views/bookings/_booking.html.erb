@@ -1,0 +1,36 @@
+<tr>
+  <% if !booking.cancel? %>
+    <td><%= booking.booking_date %></td>
+    <td><%= booking.check_in %></td>
+    <td><%= booking.check_out %></td>
+    <td>
+      <% if booking.pending? %>
+        <span class="badge badge-warning">
+          <%= t ".pending" %>
+        </span>
+      <% elsif booking.approve? %>
+        <span class="badge badge-success">
+          <%= t ".approve" %>
+        </span>
+      <% else %>
+        <span class="badge badge-danger">
+          <%= t ".refuse" %>
+        </span>
+      <% end %>
+    </td>
+    <td><%= booking.rooms[0].room_type.name %></td>
+    <td>
+      <% booking.rooms.each do |room| %>
+        <p class="badge badge-light"><%= room.number  %></p>
+        <br/>
+      <% end %>
+    </td>
+    <td><%= booking.refuse_reason %></td>
+    <td><%= booking.user_star_rate %></td>
+    <th><%= booking.rooms.length * booking.rooms[0].room_type.cost %>$</th>
+    <td>
+      <i class="fa fa-trash icon delete-icon" aria-hidden="true"></i>
+      <i class="fa fa-pencil-square icon edit-icon" aria-hidden="true"></i>
+    </td>
+  <% end %>
+</tr>

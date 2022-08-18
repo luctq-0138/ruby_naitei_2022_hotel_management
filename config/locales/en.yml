@@ -95,6 +95,8 @@ en:
       login: "Log in"
       signup: "Sign up"
       logout: "Log out"
+      booking_history: "Booking history"
+      profile: "Profile"
     application_admin:
       language: "EN"
       dashboard: "Dashboard"
@@ -214,3 +216,20 @@ en:
         not_found_room_type: "Booking fail, not found room type"
       find_room:
         not_found_room:  "Booking fail, not found room"
+    index:
+      booking_history: "Booking History"
+      home: "Home"
+      booking_date: "Booking date"
+      check_in_date: "Check in date"
+      check_out_date: "Check out date"
+      status_booking: "Status booking"
+      room_type: "Room type"
+      room_number: "Room number"
+      booking_reject: "Booking reject"
+      booking_rate: "Booking rate"
+      total_amount: "Total amount"
+      actions: "Actions"
+    booking:
+      pending: "Pending"
+      approve: "Approve"
+      refuse: "Refuse"

@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(version: 2022_08_19_022831) do
   create_table "bookings", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.datetime "booking_date", null: false
     t.datetime "check_in", null: false
+    t.datetime "check_out", null: false
     t.integer "status", default: 0, null: false
     t.bigint "user_id"
     t.text "refuse_reason"
