@@ -4,12 +4,17 @@ module SessionsHelper
   end
 
   def handle_login user
-    log_in user
-    params[:session][:remember_me] == "1" ? remember(user) : forget(user)
-    if user.user?
-      redirect_to root_url
+    if user.activated?
+      log_in user
+      params[:session][:remember_me] == "1" ? remember(user) : forget(user)
+      if user.user?
+        redirect_to root_url
+      else
+        redirect_to admin_root_url
+      end
     else
-      redirect_to admin_root_url
+      flash[:warning] = t ".account_not_activated"
+      redirect_to root_url
     end
   end
 

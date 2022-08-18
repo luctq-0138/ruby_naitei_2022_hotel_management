@@ -261,10 +261,49 @@ en:
       actions: "Actions"
       not_found_booking: "Not found any booking"
     destroy:
-      destroy_success: "Destroy booking success"
+      destroy_sucess: "Destroy booking success"
       destroy_fail: "Destroy booking fail"
     booking:
       pending: "Pending"
       approve: "Approve"
       refuse: "Refuse"
       confirm_delete: "You sure cancel your booking?"
+  account_activations:
+    edit:
+      user_unsuccess: "Invalid activation link"
+      user_success: "Account activated"
+    find_user:
+      active_account_fail: "Active account fail, not found user"
+  user_mailer:
+    account_activation:
+      account_activation: "Account activation"
+      welcome_to: "Welcome to the my hotel! Click on the link below to activate your account:"
+      activate: "Activate"
+      hi: "Hi"
+    password_reset:
+      password_reset: "Password reset"
+      tutorial: "To reset your password click the link below:"
+      time_expire: "This link will expire in two hours."
+      if_not_request: "If you did not request your password to be reset, please ignore this email andyour password will stay as it is."
+      reset_password: "Reset password"
+  password_resets:
+    create:
+      email_send_success: "Email sent with password reset instructions"
+      email_not_found: "Email address not found"
+    update:
+      not_empty: "can't not empty"
+      password_reset_success: "Password has been reset."
+      password_reset_fail: "Errors occurred. Please try again."
+    check_expiration:
+      password_expried: "Password reset has expired."
+    edit:
+      title: "Reset password"
+      form:
+        password_confim: "Password confimation"
+        btn_submit: "Update password"
+    get_user:
+      user_not_found: "User not found"
+    new:
+      title: "Forgot password"
+      form:
+        btn_submit: "Submit"

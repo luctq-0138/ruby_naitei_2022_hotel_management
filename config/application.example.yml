@@ -1,0 +1,11 @@
+# Need config this file to send mail
+database_username:
+database_password:
+database_name:
+host:
+host_email:
+mail_user_name:
+mail_user_password:
+mail_address:
+mail_domain:
+mail_port:

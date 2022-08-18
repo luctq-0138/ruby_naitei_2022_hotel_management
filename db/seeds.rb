@@ -9,6 +9,7 @@ User.create!(name: "admin",
              address: "144 Xuan Thuy, Cau Giay, Ha Noi",
              phone_number: "0989470882",
              activated: true,
+             activated_at: Time.zone.now,
              role: 1)
 10.times do |n|
   name = Faker::Name.name;
@@ -23,6 +24,7 @@ User.create!(name: "admin",
               address: address,
               phone_number: phone_number,
               activated: true,
+              activated_at: Time.zone.now,
               role: 0)
 end
 
