@@ -6,15 +6,16 @@
     Version: 1.0
     Created: Colorlib
 ---------------------------------------------------------  */
-('use strict');
 
-(function ($) {
+'use strict';
+
+jQuery(function ($) {
   /*------------------
         Preloader
     --------------------*/
   $(window).on('load', function () {
     $('.loader').fadeOut();
-    $('#preloder').delay(100).fadeOut('slow');
+    $('#preloder').delay(200).fadeOut('slow');
   });
 
   /*------------------
@@ -94,13 +95,31 @@
   /*------------------
 		Date Picker
 	--------------------*/
-  $('#date-in').datepicker({
-    minDate: 0,
-    dateFormat: 'dd MM, yy',
+  $('#booking_date_in').datepicker({
+    minDate: '0',
+    dateFormat: 'yy/mm/dd',
+    onSelect: function (dateStr) {
+      var min = $(this).datepicker('getDate');
+      if (min) {
+        min.setDate(min.getDate() + 1);
+      }
+      $('#booking_date_out').datepicker('option', 'minDate', min || '0');
+    },
   });
-  console.log($('.date-picker'));
+
+  $('#booking_date_out').datepicker({
+    minDate: '0',
+    dateFormat: 'yy/mm/dd',
+    onSelect: function (dateStr) {
+      var max = $(this).datepicker('getDate');
+      if (max) {
+        max.setDate(max.getDate() - 1);
+      }
+      $('#booking_date_in').datepicker('option', 'maxDate', max || '+1Y+6M');
+    },
+  });
   /*------------------
 		Nice Select
 	--------------------*/
   $('select').niceSelect();
-})(jQuery);
+});

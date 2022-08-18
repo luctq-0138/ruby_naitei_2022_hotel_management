@@ -1,7 +1,7 @@
 class RoomTypesController < ApplicationController
   def index
     @pagy, @room_types = pagy RoomType.all, page: params[:page],
-                                            items: Settings.page.default
+                                            items: Settings.page.default_size
   end
 
   def show

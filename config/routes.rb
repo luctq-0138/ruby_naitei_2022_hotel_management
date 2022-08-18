@@ -8,8 +8,11 @@ Rails.application.routes.draw do
     get "/signup", to: "users#new"
     get "/login", to: "sessions#new"
     post "/login", to: "sessions#create"
+    post "/save_bookings", to: "bookings#save_booking_session"
     delete "/logout", to: "sessions#destroy"
-    resources :room_types
+    get "/bookings", to: "bookings#new"
+    resources :bookings, only: %i(create)
+    resources :room_types,  only: %i(index show)
     resources :users
     namespace :admin do
       root to: "static_pages#index"

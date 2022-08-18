@@ -1,0 +1,412 @@
+.booking-sidebar--customs {
+  float: left;
+  display: block;
+}
+.booking-main-contents {
+  width: 100%;
+  padding: 20px;
+  transition: height 0.3s linear;
+  opacity: 1;
+  transform: scale(1);
+}
+#jagged-border-id {
+  background-color: #f9f9f9;
+  box-shadow: none !important;
+}
+.white-bg {
+  background: #fff;
+}
+.jagged-border {
+  position: relative;
+  width: 100%;
+  margin-top: 10px;
+  background-color: #fff;
+  box-shadow: 0 0 1px 1px #ccc;
+}
+.white-bg:before {
+  background: linear-gradient(
+      45deg,
+      transparent 33.333%,
+      #fff 33.333%,
+      #fff 66.667%,
+      transparent 66.667%
+    ),
+    linear-gradient(
+      -45deg,
+      transparent 33.333%,
+      #fff 33.333%,
+      #fff 66.667%,
+      transparent 66.667%
+    );
+  background-size: 20px 40px;
+}
+.jagged-border:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: -10px;
+  width: 100%;
+  height: 10px;
+}
+#sidebar-book--custom {
+  box-shadow: 0px 0px 12px 5px rgba(0, 0, 0, 0.1);
+}
+.sidebar-book--custom {
+  overflow: hidden;
+  padding: 30px 20px 0;
+}
+.book-hotel-details {
+  width: 100%;
+  min-height: 110px;
+  display: flex;
+}
+.book-hotel-details .image {
+  width: 33%;
+  height: 92px;
+  float: left;
+  overflow: hidden;
+}
+.book-hotel-details .image img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+.book-hotel-details .about-booking {
+  float: left;
+  line-height: 1.2;
+  margin-left: 15px;
+  width: 62%;
+}
+.about-booking h4 {
+  margin: 0;
+  color: #00aeff;
+  font-size: 16px;
+}
+.about-booking p {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #000;
+}
+.sidebar-book--custom-hr {
+  border-top: dashed 1px;
+  margin: 10px 0 7px;
+  clear: both;
+}
+.booking-checkin-checkout {
+  margin: 1.5rem 0 1.4rem;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.checkin-checkout {
+  height: 85px;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -moz-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #333;
+  font-size: 12px;
+  width: 100%;
+  overflow: hidden;
+  line-height: 14px;
+}
+.checkin {
+  float: left;
+  height: 100%;
+}
+.checkin-checkout .form-caption--custom {
+  font-size: 18px;
+  line-height: 22px;
+  color: #00aeff;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+.checkin-details {
+  margin-top: 10px;
+  line-height: 1.8;
+}
+.checkin-details p {
+  margin: 0;
+}
+.booking-checkin-checkout .hng-calendar {
+  margin-left: -2px;
+}
+.checkin-checkout .hng-calendar {
+  width: 20px;
+  height: 24px;
+  fill: #828282;
+  margin-left: -2px;
+  margin-right: -2px;
+}
+svg:not(:root) {
+  overflow: hidden;
+}
+[class*=' hng-'],
+[class^='hng-'] {
+  height: 20px;
+  width: 20px;
+  display: inline-block;
+  vertical-align: middle;
+  fill: currentColor;
+}
+.checkin-details p span,
+.checkout-details span,
+.resend button {
+  vertical-align: middle;
+}
+.checkin-details p .img-clock-checkin {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+}
+.booking-duration {
+  font-size: 11px;
+  color: #bdbdbd;
+  text-align: center;
+  margin: 0 auto;
+  height: 100%;
+  padding-top: 3px;
+}
+.booking-duration span {
+  text-decoration: line-through;
+}
+.checkout {
+  float: left;
+  height: 100%;
+}
+.checkin-checkout .form-caption--custom {
+  font-size: 18px;
+  line-height: 22px;
+  color: #00aeff;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+.checkout-details {
+  margin-top: 10px;
+  line-height: 1.8;
+}
+.checkout-details p {
+  margin: 0;
+}
+.checkout-details .hng-calendar {
+  margin-right: -4px;
+  margin-left: -3px;
+}
+.booking-checkin-checkout .hng-calendar {
+  margin-left: -2px;
+}
+.checkin-checkout .hng-calendar {
+  width: 20px;
+  height: 24px;
+  fill: #828282;
+  margin-left: -2px;
+  margin-right: -2px;
+}
+.checkout-details span {
+  margin-left: 5px;
+}
+.checkout-details p .image-clock-book {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+}
+.head-count-block {
+  width: 100%;
+  min-height: 34px;
+  display: flex;
+  align-items: center;
+}
+.head-count {
+  width: 70%;
+  padding: 0;
+  float: left;
+}
+.head-count ul {
+  padding: 0;
+  margin: 0;
+  color: #333;
+  list-style: none;
+}
+
+.change-head-count {
+  width: 30%;
+  padding: 0;
+  float: right;
+}
+.change-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  border: 1px solid #333;
+  padding: 0;
+  height: 25px;
+  line-height: 1.5;
+  font-size: 12px;
+}
+.change-button a {
+  color: #333;
+  text-decoration: none;
+}
+.room-list,
+.room-select-list {
+  clear: both;
+}
+.room-list ul,
+.room-select-list ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  font-size: 13px;
+}
+.booking-room-list {
+  margin: 2rem 0 3rem !important;
+}
+.room-list li {
+  padding: 0 0 20px;
+  height: 20px;
+  margin-bottom: 5%;
+}
+.room-list li,
+.room-select-list li {
+  width: 100%;
+  position: relative;
+}
+.room-type {
+  width: 70%;
+  float: left;
+  color: #333;
+}
+.room-pricing {
+  text-align: right;
+  width: 30%;
+  float: right;
+  font-weight: 700;
+}
+.discount-redeemed {
+  width: 60%;
+  padding: 0;
+  float: left;
+}
+.discount-substraction {
+  width: 30%;
+  float: right;
+  text-align: right;
+  color: #32a636;
+  font-weight: 700;
+}
+.summary {
+  display: block !important;
+  margin-top: 0;
+  color: #828282;
+  background-color: #e0e0e0;
+  padding: 20px 17px;
+  clear: both;
+  text-align: center;
+  font-weight: 400;
+}
+.booking-total-part {
+  color: #333;
+  padding-bottom: 5px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+}
+.row {
+  margin-right: -15px;
+  margin-left: -15px;
+}
+.row:before {
+  display: table;
+  content: ' ';
+}
+.sub-total {
+  padding-top: 7px;
+  display: block;
+  font-size: 14px;
+  line-height: 19px;
+  font-weight: 500;
+  padding-right: 0;
+}
+.booking-money {
+  font-size: 24px;
+  color: #32a636;
+  text-align: right;
+  padding-right: 4.5%;
+  padding-top: 7px;
+  display: flex;
+  justify-content: flex-end;
+}
+.row:after {
+  clear: both;
+}
+.payment-options-block {
+  height: 70px;
+  margin-top: 30px;
+}
+.pay-at-hotel {
+  height: 50px;
+  width: 50%;
+  float: left;
+}
+@media only screen and (min-width: 801px) and (max-width: 1091px) {
+  .pay-at-hotel,
+  .pay-at-hotel-button,
+  .pay-now,
+  .pay-now-button {
+    width: 100% !important;
+  }
+}
+.pay-at-hotel-button {
+  border: 1px solid #333 !important;
+  border-radius: 3px;
+  width: 210px;
+  height: 40px;
+  text-align: center;
+  font-size: 16px;
+  color: #333;
+  transition: 0.3s ease all;
+  background-color: #fff;
+  outline: 0;
+}
+.pay-at-hotel-button:hover {
+  color: #fff;
+  cursor: pointer;
+  background-color: #00aeff;
+  border: 1px solid #00aeff !important;
+}
+.pay-now {
+  float: right;
+}
+.unset-box-shadow {
+  box-shadow: unset !important;
+}
+.pay-now-button {
+  border: 1px solid #32a636;
+  border-radius: 3px;
+  height: 40px;
+  text-align: center;
+  font-size: 16px;
+  color: #fff;
+  background-color: #32a636;
+  outline: 0;
+  padding: 5px 35px;
+  transition: 0.3s ease-in-out;
+}
+.pay-now-button:hover {
+  background-color: #257928;
+  border: 1px solid #257928;
+  cursor: pointer;
+  color: #fff;
+}
+.pay-now p {
+  font-size: 12px;
+  color: #333;
+  text-align: center;
+  margin-top: 5px;
+}
+.pay-now span {
+  line-height: 1.5;
+}
