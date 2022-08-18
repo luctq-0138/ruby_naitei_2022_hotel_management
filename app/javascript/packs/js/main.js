@@ -7,9 +7,7 @@ $(document).on('turbolinks:load', function () {
   /*------------------
         Preloader
     --------------------*/
-  $(window).on('load', function () {
-    console.log('heelloo');
-  });
+  $(window).on('load', function () {});
 
   jQuery(function ($) {
     /*------------------
@@ -110,6 +108,34 @@ $(document).on('turbolinks:load', function () {
           max.setDate(max.getDate() - 1);
         }
         $('#booking_date_in').datepicker('option', 'maxDate', max || '+1Y+6M');
+      },
+    });
+
+    $('#room_type_date_in').datepicker({
+      minDate: '0',
+      dateFormat: 'yy/mm/dd',
+      onSelect: function (dateStr) {
+        var min = $(this).datepicker('getDate');
+        if (min) {
+          min.setDate(min.getDate() + 1);
+        }
+        $('#room_type_date_out').datepicker('option', 'minDate', min || '0');
+      },
+    });
+
+    $('#room_type_date_out').datepicker({
+      minDate: '0',
+      dateFormat: 'yy/mm/dd',
+      onSelect: function (dateStr) {
+        var max = $(this).datepicker('getDate');
+        if (max) {
+          max.setDate(max.getDate() - 1);
+        }
+        $('#room_type_date_in').datepicker(
+          'option',
+          'maxDate',
+          max || '+1Y+6M'
+        );
       },
     });
     /*------------------

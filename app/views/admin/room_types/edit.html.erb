@@ -1,16 +1,22 @@
 <div class="cotainter w-75 m-auto">
-  <%= form_for(:session, url: login_path) do |f| %>
+  <%= form_for(:room_type, url: admin_room_type_path, method: :patch) do |f| %>
     <%= f.label :name, "Tên loại phòng"  %>
     <%= f.text_field :name, class: "form-control",value:@room_type.name %>
-    <%= f.label :area, "Diện tích" %>
-    <%= f.text_field :area, class: "form-control",value:@room_type.size  %>
+    <%= f.label :image, "Ảnh"  %>
+    <%= f.text_field :image, class: "form-control",value:@room_type.image %>
+    <%= f.label :size, "Diện tích" %>
+    <%= f.text_field :size, class: "form-control",value:@room_type.size  %>
     <%= f.label :capacity, "Sức chứa" %>
-    <%= f.text_field :capacity, class: "form-control",value:@room_type.capacity  %>
-    <%= f.label :price, "Giá phòng" %>
+    <%= f.number_field :capacity, class: "form-control",value:@room_type.capacity  %>
+    <%= f.label :cost, "Giá phòng" %>
     <div class="input-group-prepend">
-      <span class="input-group-text" style="height:34px; font-size:15px">$/Pernight</span>
-      <%= f.text_field :price, class: "form-control",value:@room_type.cost  %>
+      <span class="input-group-text" style="height:34px; font-size:15px">$/Tiếng</span>
+      <%= f.number_field :cost, class: "form-control",value:@room_type.cost  %>
     </div>
+    <%= f.label :services, "Dịch vụ" %>
+    <%= f.text_area :services, cols: 30, rows: 8, value:@room_type.services %>
+    <%= f.label :description, "Mô tả" %>
+    <%= f.text_area :description, cols: 30, rows: 8, value:@room_type.description %>
     <%= f.submit "Cập nhật", class: "btn btn-primary" %>
   <% end %>
 </div>

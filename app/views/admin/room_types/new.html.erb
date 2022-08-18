@@ -1,20 +1,22 @@
 <div class="cotainter w-75 m-auto">
-  <%= form_for(:room_type, url: new_admin_room_type_path) do |f| %>
-    <%= f.label :name, "Tên loại phòng"  %>
+  <%= form_for(:room_type, url: admin_room_types_path, method: :post) do |f| %>
+    <%= f.label :name, "Tên loại phòng" %>
     <%= f.text_field :name, class: "form-control" %>
+    <%= f.label :image, "Ảnh"  %>
+    <%= f.text_field :image, class: "form-control" %>
     <%= f.label :size, "Diện tích" %>
-    <%= f.text_field :size, class: "form-control"  %>
+    <%= f.number_field :size, class: "form-control"  %>
     <%= f.label :capacity, "Sức chứa" %>
-    <%= f.text_field :capacity, class: "form-control"  %>
+    <%= f.number_field :capacity, class: "form-control" %>
     <%= f.label :cost, "Giá phòng" %>
     <div class="input-group-prepend">
-      <span class="input-group-text" style="height:34px; font-size:15px">$/Pernight</span>
-      <%= f.text_field :cost, class: "form-control"  %>
+      <span class="input-group-text" style="height:34px; font-size:15px">$/Tiếng</span>
+      <%= f.number_field :cost, class: "form-control"  %>
     </div>
     <%= f.label :services, "Dịch vụ" %>
-    <%= f.text_area :description, :cols => 30, :rows => 8 %>
+    <%= f.text_area :services, cols: 30, rows: 8 %>
     <%= f.label :description, "Mô tả" %>
-    <%= f.text_area :description, :cols => 30, :rows => 8 %>
+    <%= f.text_area :description, cols: 30, rows: 8 %>
     <%= f.submit "Thêm mới", class: "btn btn-primary" %>
   <% end %>
 </div>

@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     post "/save_bookings", to: "bookings#save_booking_session"
     post "/get_room_available", to: "room_types#get_room_available"
     delete "/logout", to: "sessions#destroy"
+    post "/search", to: "room_types#search"
     resources :password_resets, only: %i(new create edit update)
     resources :account_activations, only: %i(edit)
     resources :bookings, only: %i(create index new destroy)
@@ -20,7 +21,9 @@ Rails.application.routes.draw do
       root to: "static_pages#index"
       resources :room_types
       resources :bookings
-      resources :users
+       resources :users do
+        resources :bookings
+      end
       resources :static_pages
     end
   end
