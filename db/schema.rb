@@ -10,27 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_08_14_154203) do
+ActiveRecord::Schema.define(version: 2022_08_19_022831) do
 
   create_table "bookings", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.datetime "booking_date", null: false
-    t.string "duration_of_stay", null: false
-    t.datetime "check_in"
-    t.datetime "checkout"
-    t.integer "total_rooms_booked", null: false
+    t.datetime "check_in", null: false
     t.integer "status", default: 0, null: false
     t.bigint "user_id"
     t.text "refuse_reason"
     t.integer "user_star_rate"
-    t.decimal "total_amount", precision: 10, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.datetime "check_out", null: false
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
   create_table "payments", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "booking_id"
-    t.string "payment_type", null: false
+    t.string "payment_type", default: "offline", null: false
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

@@ -436,11 +436,11 @@ ol {
   visibility: visible;
   left: -150px;
 }
-.mainmenu > ul{
+.mainmenu > ul {
   display: flex;
   align-items: center;
 }
-.mainmenu .user_avatar{
+.mainmenu .user_avatar {
   border-radius: 50% !important;
   height: 34px;
 }
@@ -504,7 +504,7 @@ ol {
 .menu-item .nav-menu .mainmenu li .dropdown li a:after {
   display: none;
 }
-.avatar_list_item > ul{
+.avatar_list_item > ul {
   transition: none !important;
 }
 .menu-item .nav-menu .nav-right {
@@ -720,13 +720,10 @@ ol {
   background: #dfa974;
 }
 .service-item:hover i {
-
 }
 .service-item:hover h4 {
-
 }
 .service-item:hover p {
-
 }
 .service-item i {
   display: inline-block;
@@ -781,7 +778,6 @@ ol {
   transition: all 0.5s;
 }
 .hp-room-items .hp-room-item .hr-text h3 {
-
   margin-bottom: 15px;
 }
 .hp-room-items .hp-room-item .hr-text h2 {
@@ -796,7 +792,6 @@ ol {
   font-family: 'Cabin', sans-serif;
   font-size: 16px;
   font-weight: 400;
-
 }
 .hp-room-items .hp-room-item .hr-text table {
   margin-bottom: 30px;
@@ -1095,7 +1090,6 @@ ol {
   text-align: center;
 }
 .about-page-services .ap-service-item .api-text h3 {
-
 }
 /*---------------------
   Video Section
@@ -1181,7 +1175,6 @@ ol {
   opacity: 0;
 }
 .gallery-item .gi-text h3 {
-
 }
 /*---------------------
   Room Section
@@ -1251,7 +1244,6 @@ ol {
 }
 .room-pagination a:hover {
   background: #dfa974;
-
 }
 /*-----------------------
   Room Details Section
@@ -1271,7 +1263,7 @@ ol {
   overflow: hidden;
   margin-bottom: 8px;
 }
-.room-details-item .rd-text .rd-title h3 {
+.room-details-item .rd-text .rd-titler .rdt-left h3 {
   color: #19191a;
   float: left;
 }
@@ -1288,6 +1280,28 @@ ol {
   color: #f5b917;
 }
 .room-details-item .rd-text .rd-title .rdt-right a {
+  display: inline-block;
+
+  font-size: 13px;
+  text-transform: uppercase;
+  font-weight: 700;
+  background: #dfa974;
+  padding: 14px 28px 13px;
+}
+
+.room-details-item .rd-text .rd-title .rdt-left {
+  float: left;
+  text-align: left;
+}
+.room-details-item .rd-text .rd-title .rdt-left .rating {
+  display: inline-block;
+  margin-right: 25px;
+  margin-bottom: 10px;
+}
+.room-details-item .rd-text .rd-title .rdt-left .rating i {
+  color: #f5b917;
+}
+.room-details-item .rd-text .rd-title .rdt-left a {
   display: inline-block;
 
   font-size: 13px;
@@ -1472,17 +1486,17 @@ ol {
   color: #19191a;
   margin-bottom: 30px;
 }
-.room-booking form .check-date {
+form .check-date {
   position: relative;
   margin-bottom: 15px;
 }
-.room-booking form .check-date label {
+form .check-date label {
   font-size: 14px;
   color: #707079;
   display: block;
   margin-bottom: 10px;
 }
-.room-booking form .check-date input {
+form .check-date input {
   width: 100%;
   height: 50px;
   border: 1px solid #ebebeb;
@@ -1493,22 +1507,22 @@ ol {
   font-weight: 500;
   padding-left: 20px;
 }
-.room-booking form .check-date i {
+form .check-date i {
   color: #dfa974;
   position: absolute;
   right: 18px;
   bottom: 17px;
 }
-.room-booking form .select-option {
+form .select-option {
   margin-bottom: 15px;
 }
-.room-booking form .select-option label {
+form .select-option label {
   font-size: 14px;
   color: #707079;
   display: block;
   margin-bottom: 10px;
 }
-.room-booking form .select-option .nice-select {
+form .select-option .nice-select {
   border-radius: 2px;
   border: 1px solid #ebebeb;
   height: 50px;
@@ -1518,7 +1532,7 @@ ol {
   width: 100%;
   float: none;
 }
-.room-booking form .select-option .nice-select:after {
+form .select-option .nice-select:after {
   border-bottom: 2px solid #dfa974;
   border-right: 2px solid #dfa974;
   height: 10px;
@@ -1527,25 +1541,25 @@ ol {
   width: 10px;
   top: 36%;
 }
-.room-booking form .select-option .nice-select span {
+form .select-option .nice-select span {
   font-size: 16px;
   color: #19191a;
   text-transform: uppercase;
   font-weight: 500;
 }
-.room-booking form .select-option .nice-select .list {
+form .select-option .nice-select .list {
   margin-top: 0;
   width: 100%;
 }
-.room-booking form button {
+form button {
   display: block;
   font-size: 14px;
   text-transform: uppercase;
   border: 1px solid #dfa974;
   border-radius: 2px;
-  color: #dfa974;
+  color: #337ab7;
   font-weight: 500;
-  background: transparent;
+  background: #dfa974;
   width: 100%;
   height: 46px;
   margin-top: 30px;
@@ -1590,7 +1604,6 @@ ol {
   margin-bottom: 18px;
 }
 .blog-item .bi-text h4 a {
-
 }
 .blog-item .bi-text .b-time {
   font-size: 12px;
@@ -1717,7 +1730,6 @@ ol {
   margin-right: 6px;
 }
 .blog-details-text .tag-share .tags a:hover {
-
   background: #dfa974;
 }
 .blog-details-text .tag-share .social-share {

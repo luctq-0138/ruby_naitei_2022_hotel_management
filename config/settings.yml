@@ -13,3 +13,5 @@ page:
   admin_booking_tb_size: 9
   admin_rooms_tb_size: 5
   default_size: 6
+date:
+  format: "%Y/%m/%d"

@@ -29,9 +29,6 @@ vi:
     create:
       login_success: "Chào mừng đến với khách sạn của chúng tôi"
       login_fail: "Email hoặc mật khẩu đang bị sai"
-    create:
-      login_success: "Chào mừng đến với khách sạn của chúng tôi"
-      login_fail: "Email hoặc mật khẩu đang bị sai"
   shared:
     error_messages:
       intro: "Biểu mẫu có"
@@ -166,3 +163,38 @@ vi:
       your_rating: "Đánh giá của bạn"
       submit: "Xác nhận"
       list_rooms: "Danh sách phòng"
+      choose_room: "Hãy chọn một phòng"
+      your_reservation: "Đặt phòng"
+      check_in: "Ngày nhận"
+      check_out: "Ngày trả"
+      not_empty: "Không được để trống"
+      booking: "Đặt phòng"
+  bookings:
+    new:
+      bookings: "Đặt phòng"
+      home: "Trang chủ"
+      booking: "Đặt phòng"
+    booking_form:
+        name: "Tên"
+        phone_number: "Số ĐT"
+        email: "Email"
+        address: "Địa chỉ"
+        note: "Ghi chú"
+        submit: "Xác nhận"
+    booking_info:
+      check_in: "Ngày nhận"
+      check_out: "Ngày trả"
+      night: "Đêm"
+      rooms: "phòng"
+      change: "Thay đổi"
+      room: "Phòng"
+      discount: "Giảm giá"
+      total_amount: "Tổng giá"
+    create:
+      booking_success: "Đặt phòng thành công"
+      handle_booking:
+        booking_error: "Đã có lỗi, vui lòng thử lại"
+      find_room_type:
+        not_found_room_type: "Lỗi đặt phòng, không tìm thấy loại phòng"
+      find_room:
+        not_found_room:  "Lỗi đặt phòng, không tìm thấy phòng"

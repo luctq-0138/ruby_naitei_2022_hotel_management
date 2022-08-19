@@ -1,0 +1,25 @@
+<%= form_for(:booking, url: bookings_path) do |f| %>
+  <div class="form-group">
+    <%= f.label :name, t(".name") %>
+    <%= f.text_field :name, class: "form-control", value: current_user.name, :disabled => true %>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <%= f.label :phone_number, t(".phone_number") %>
+      <%= f.text_field :phone_number, class: "form-control", value: current_user.phone_number, :disabled => true %>
+    </div>
+    <div class="form-group col-md-6">
+      <%= f.label :email, t(".email") %>
+      <%= f.email_field :email, class: "form-control", value: current_user.email, :disabled => true %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :address, t(".address") %>
+    <%= f.text_field :address, class: "form-control", value: current_user.address, :disabled => true %>
+  </div>
+  <div class="form-group">
+    <%= f.label :note, t(".note") %>
+    <%= text_area(:note, size: "20x30", class: "form-control")  %>
+  </div>
+  <%= f.submit t(".submit"), class: "btn btn-primary", data: { disable_with: false } %>
+<% end %>

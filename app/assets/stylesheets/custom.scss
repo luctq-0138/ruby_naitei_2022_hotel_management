@@ -37,8 +37,8 @@ select,
   @include box_sizing;
 }
 
-input {
-  height: auto !important;
+#user_password_confirmation {
+  margin-bottom: 20px;
 }
 
 .checkbox {
@@ -113,20 +113,26 @@ select {
   padding: 5px;
   text-align: center;
 }
-.grid-item:hover {
+.grid-item-available:hover {
   cursor: pointer;
   background-color: #dfa974;
   color: #ffffff;
 }
 
-.grid-item .not-available {
+.grid-item-selected {
   background-color: #dfa974;
   color: #ffffff;
 }
-
-.grid-item .not-available:hover {
-  background-color: #dfa974;
+.invalid {
+  color: red;
+  display: none;
+}
+.not-available {
+  background-color: gray;
   color: #ffffff;
+}
+
+.not-available:hover {
   cursor: default;
 }
 
@@ -148,4 +154,28 @@ h3.list_rooms {
 }
 thead > tr > th {
   white-space: nowrap;
+}
+.shb-mobile-sidebar {
+  display: block;
+  margin-top: 30px;
+}
+.shb-booking-your-stay-wrapper {
+  box-shadow: 0px 0px 12px 5px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+  padding: 30px;
+  margin: 0 0 30px 0;
+}
+.block {
+  width: 5px;
+  height: 5px;
+}
+.block-available {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+.block-not-available {
+  background-color: gray;
+}
+
+.display {
+  display: block;
 }

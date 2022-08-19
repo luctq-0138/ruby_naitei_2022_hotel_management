@@ -1,0 +1,87 @@
+<div class="booking-sidebar booking-sidebar--customs hotel_rooms">
+  <div class="jagged-border white-bg" id="jagged-border-id">
+    <div id="sidebar-book--custom">
+      <div class="sidebar-book sidebar-book--custom">
+        <div class="book-hotel-details">
+          <div class="image">
+            <img src="https://media.hotels.ng/img/h1448965/116/92/b1/subkem-leading-hotels-&amp;-suites-1448965-20.jpg?w=230&amp;h=173&amp;c=true" width="100%">
+          </div>
+          <div class="about-booking">
+            <h4><%= @room_type.name %></h4>
+            <p class="address"><%= compact_text @room_type.description %></p>
+          </div>
+        </div>
+        <hr class="sidebar-book--custom-hr">
+        <div class="checkin-checkout booking-checkin-checkout">
+          <div class="checkin">
+            <span class="form-caption--custom"><%= t ".check_in" %></span>
+            <div class="checkin-details">
+              <p>
+                <i class="fa fa-calendar"></i>
+                <span id="check-in-date"><%= @booking["check_in"] %></span>
+              </p>
+            </div>
+          </div>
+          <div class="booking-duration">
+            <span>----</span>1 <%= t ".night" %>
+            <span>----</span>
+          </div>
+          <div class="checkout">
+            <span class="form-caption--custom"><%= t ".check_out" %></span>
+            <div class="checkout-details">
+              <p>
+                <i class="fa fa-calendar"></i>
+                <span id="check-out-date"><%= @booking["check_out"]%></span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <hr class="sidebar-book--custom-hr">
+        <div class="head-count-block">
+          <div class="head-count">
+            <ul>
+              <li><%= @rooms.length %> <%= t ".rooms" %></li>
+            </ul>
+          </div>
+          <div class="change-head-count">
+            <div class="change-button">
+              <form id="changeRoomsForm" action="https://hotels.ng/hotel/1448965-subkem-leading-hotels-suites/book" method="POST">
+                <a data-ga-label="change" data-ga-action="check-out-button-click" data-ga-category="Book-Page-Interaction" id="changeRoomsButton" href="#"><%= t ".change" %></a>
+              </form>
+            </div>
+          </div>
+        </div>
+        <hr class="sidebar-book--custom-hr">
+        <div class="room-list ">
+          <ul class="booking-room-list">
+            <% @rooms.each do |room| %>
+              <li>
+                <span class="room-type">
+                  <%= t ".room" %> <%= room.number %></span>
+                <span class="room-pricing">$<span class="total_room_price_formatted"><%= @room_type.cost %></span></span>
+              </li>
+            <% end %>
+            <li class="redeemed-discount-item">
+              <span class="discount-redeemed">
+                <img src="https://static.hotels.ng/v7/img/discount-codicon.svg">
+                &nbsp;<%= t ".discount"%>
+              </span>
+              <span class="discount-substraction">-0$
+                <span id="discount-value"></span>
+              </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="summary" style="display: none;">
+        <div class="row booking-total-part">
+          <span class="col-xs-5 sub-total"><%= t ".total_amount"%></span>
+          <span class="col-xs-7 booking-money">$
+            <span class="booking-total-display"><%= @room_type.cost * @rooms.length %></span>
+          </span>
+          <input type="hidden" id="booking-total-price" value="88000">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

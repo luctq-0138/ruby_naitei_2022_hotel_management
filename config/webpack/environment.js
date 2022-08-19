@@ -4,12 +4,17 @@ const webpack = require('webpack');
 environment.plugins.append(
   'Provide',
   new webpack.ProvidePlugin({
-    $: 'jquery/src/jquery',
-    jQuery: 'jquery/src/jquery',
+    $: 'jquery',
     jQuery: 'jquery',
-    'window.jQuery': 'jquery',
     Popper: ['popper.js', 'default'],
   })
 );
-
+environment.toWebpackConfig().merge({
+  resolve: {
+    alias: {
+      jquery: 'jquery/src/jquery',
+      'jquery-ui': 'jquery-ui-dist/jquery-ui.js',
+    },
+  },
+});
 module.exports = environment;

@@ -30,6 +30,9 @@ en:
         password: "Password"
         btn_submit: "Log in"
         remember: "Remember me on this computer"
+    create:
+      login_success: "Welcome to our hotel"
+      login_fail: "Email or password is invalid"
   static_pages:
     home:
       heading: "Welcome to my hotel"
@@ -92,7 +95,6 @@ en:
       login: "Log in"
       signup: "Sign up"
       logout: "Log out"
-
     application_admin:
       language: "EN"
       dashboard: "Dashboard"
@@ -141,7 +143,6 @@ en:
       admin_admin_users: "Admin Admin Users"
       admin_admin_user_show: "Admin Admin User"
       admin_admin_user_new: "New Admin Admin"
-
     footer:
       title: "We inspire and reach millions of travelers across 90 local websites"
       contact: "Contact us"
@@ -178,3 +179,38 @@ en:
       your_rating: "Your ratings"
       submit: "Submit now"
       list_rooms: "List rooms"
+      choose_room: "Phease, chooose a room"
+      your_reservation: "Your reservation"
+      check_in: "Check in"
+      check_out: "Check out"
+      not_empty: "Can't not empty"
+      booking: "Booking"
+  bookings:
+    new:
+      bookings: "Bookings"
+      home: "Home"
+      booking: "Booking"
+    booking_form:
+        name: "Name"
+        phone_number: "Phone Number"
+        email: "Email"
+        address: "Address"
+        note: "Note"
+        submit: "Submit"
+    booking_info:
+      check_in: "Check in"
+      check_out: "Check_out"
+      night: "Night"
+      rooms: "Rooms"
+      change: "Change"
+      room: "Room"
+      discount: "Discount"
+      total_amount: "Total amount"
+    create:
+      booking_success: "Booking room success"
+      handle_booking:
+        booking_error: "Error! An error occurred. Please try again later"
+      find_room_type:
+        not_found_room_type: "Booking fail, not found room type"
+      find_room:
+        not_found_room:  "Booking fail, not found room"

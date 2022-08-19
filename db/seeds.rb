@@ -39,8 +39,9 @@ image = [
   "https://firebasestorage.googleapis.com/v0/b/hotel-management-a5ac1.appspot.com/o/room-3.jpg?alt=media&token=1fc309af-0f29-423a-94aa-8e6736cc725e"
 ]
 
-room_type_names = ["Premium King Room", "Deluxe Room", "Double Room", "Luxury Room", "Room With View", "Small View"]
-(0..5).each do |i|
+room_type_names = ["Premium King Room", "Deluxe Room", "Double Room", "Luxury Room", "Room With View", "Small View", "Deluxe Queen Room", "King Ensuite Room", "Queen Room", "Deluxe Ensuite Room", "Ensuite Room"]
+n = room_type_names.length
+n.times do |i|
   cost = Faker::Commerce.price
   size = Faker::Number.between(from: 25, to: 35)
   capacity = Faker::Number.between(from: 2, to: 4)
@@ -51,7 +52,7 @@ room_type_names = ["Premium King Room", "Deluxe Room", "Double Room", "Luxury Ro
                    capacity: capacity,
                    cost: cost,
                    star_rate: star_rate,
-                   image: image[i],
+                   image: image.shuffle.first,
                    services: services,
                    description: Faker::Lorem.paragraph(sentence_count: 30))
 end
@@ -59,11 +60,15 @@ end
 #Room
 
 room_types = RoomType.all
+room_num = Faker::Number.between(from: 1, to: 10)
 12.times do |n|
   room_types.each do |room_type|
     number = Faker::Number.between(from: 100, to: 300)
+    available = rand(2) == 1
     room_type.rooms.create!(number: number,
-                            name: "#{room_type.name} - #{number}")
+                            name: "#{room_type.name} - #{number}",
+                            is_available: available)
+
   end
 end
 
@@ -73,16 +78,14 @@ rooms = Room.all
 time_unit=["days", "weeks"]
 users = User.all
 20.times do |n|
-  booking_date = Faker::Date.backward(days: 14)
-  duration_of_stay = "#{Faker::Number.between(from: 1, to: 4)} #{time_unit.shuffle.first}"
-  total_rooms_booked = Faker::Number.between(from: 1, to: 4)
-  total_amount = Faker::Number.decimal(l_digits: 2)
+  booking_date = Time.zone.today.strftime(Settings.date.format)
+  check_in = Faker::Date.between(from: '2022/08/18', to: '2022/08/25').strftime(Settings.date.format)
+  check_out = Faker::Date.between(from: '2022/08/25', to: '2022/08/30').strftime(Settings.date.format)
   user = users.shuffle.first
   booking = user.bookings.create!(booking_date: booking_date,
-                           duration_of_stay: duration_of_stay,
-                           total_rooms_booked: total_rooms_booked,
-                           total_amount: total_amount)
-  total_rooms_booked.times do
+                           check_in: check_in,
+                           check_out: check_out)
+  2.times do
     booking.room_bookeds.create!(room: rooms[rand(rooms.size)])
   end
 end
