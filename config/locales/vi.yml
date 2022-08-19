@@ -96,6 +96,8 @@ vi:
       login: "Đăng nhập"
       signup: "Đăng ký"
       logout: "Đăng xuất"
+      booking_history: "Lịch sử đặt hàng"
+      profile: "Thông tin cá nhân"
     application_admin:
       language: "EN"
       dashboard: "Bảng điều khiển"
@@ -198,3 +200,20 @@ vi:
         not_found_room_type: "Lỗi đặt phòng, không tìm thấy loại phòng"
       find_room:
         not_found_room:  "Lỗi đặt phòng, không tìm thấy phòng"
+    index:
+      booking_history: "Lịch sử đăt phòng"
+      home: "Trang chủ"
+      booking_date: "Ngày đặt"
+      check_in_date: "Ngày nhận"
+      check_out_date: "Ngày trả"
+      status_booking: "Trạng thái"
+      room_type: "Loại phòng"
+      room_number: "Số phòng"
+      booking_reject: "Lý do từ chối"
+      booking_rate: "Đánh giá"
+      total_amount: "Tổng giá"
+      actions: "Hành động"
+    booking:
+      pending: "Chờ phê duyệt"
+      approve: "Phê duyệt"
+      refuse: "Từ chối"

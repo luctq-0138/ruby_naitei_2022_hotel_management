@@ -60,10 +60,11 @@
                   <li class="avatar_list_item">
                     <div>
                       <img class="user_avatar" src="https://firebasestorage.googleapis.com/v0/b/hotel-management-a5ac1.appspot.com/o/faces-1.jpg?alt=media&token=ee3913a3-75fd-4107-8fa7-988f251046d0" alt="">
-                      <ul class="dropdown">
+                      <ul class="dropdown" style="width: 200px">
                         <li class="user_name">@<%= current_user.name %></li>
-                        <li><%=link_to "Profile","#" %></li>
-                        <li><%=link_to "Logout",logout_path, method: :delete %></li>
+                        <li><%= link_to t(".booking_history"), bookings_path %></li>
+                        <li><%= link_to t(".profile"),"#" %></li>
+                        <li><%= link_to t(".logout"),logout_path, method: :delete %></li>
                       </ul>
                     </div>
                   </li>
