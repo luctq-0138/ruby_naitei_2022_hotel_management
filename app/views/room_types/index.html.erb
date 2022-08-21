@@ -18,6 +18,8 @@
 <!-- Rooms Section Begin -->
 <section class="rooms-section spad">
   <div class="container">
+    <div><i class="fa fa-filter"></i>Filter</div>
+    <%= render "filter" %>
     <div class="row">
       <% if @room_types.any? %>
         <%= render @room_types %>

@@ -11,10 +11,12 @@ class BookingsController < ApplicationController
   end
 
   def create
-    handle_save_booking
-    session.delete(:booking)
-    flash[:success] = t ".booking_success"
-    redirect_to room_types_path
+    ActiveRecord::Base.transaction do
+      handle_save_booking
+      session.delete(:booking)
+      flash[:success] = t ".booking_success"
+      redirect_to room_types_path
+    end
   end
 
   def save_booking_session

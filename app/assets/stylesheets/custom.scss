@@ -192,3 +192,45 @@ booking_list_section {
 .badge-warning {
   background-color: #ffc107 !important;
 }
+.filter {
+  display: block;
+  box-shadow: 0px 0px 12px 5px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  margin-bottom: 15px;
+  column-gap: 20px;
+}
+.filter-item {
+  box-sizing: border-box;
+  flex: 1;
+  margin-top: 15px;
+}
+.filter-item-cost {
+  column-gap: 10px;
+}
+.filter-item-cost-min {
+  flex: 1;
+}
+.filter-item-cost-max {
+  flex: 1;
+}
+.wrapper {
+  display: flex;
+  align-items: baseline;
+}
+label {
+  /* padding-right: 750px; */
+  display: flex;
+  align-items: center;
+}
+.filter-item input {
+  width: inherit;
+}
+.filter-title {
+  font-weight: 200;
+  margin-bottom: 20px;
+}
+.concat-input {
+  height: 1px;
+  background-color: gray;
+  width: 100px;
+}
