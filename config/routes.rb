@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     post "/search", to: "room_types#search"
     resources :password_resets, only: %i(new create edit update)
     resources :account_activations, only: %i(edit)
+    resources :reviews, only: %i(create update)
     resources :bookings, only: %i(create index new destroy)
     resources :room_types,  only: %i(index show)
     resources :users

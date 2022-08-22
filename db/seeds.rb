@@ -105,3 +105,15 @@ bookings.each do |booking|
                   payment_type: payment_type,
                   user_id: user_id)
 end
+
+# Review
+room_types = RoomType.all
+users = User.all
+room_types.each do |room_type|
+  review = Faker::Lorem.paragraph(sentence_count: 20)
+  star_rate =  Faker::Number.between(from: 3, to: 5)
+  user_id = users.shuffle.first.id
+  room_type.reviews.create!(review: review,
+                    star_rate: star_rate,
+                    user_id: user_id)
+end

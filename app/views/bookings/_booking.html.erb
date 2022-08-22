@@ -8,10 +8,10 @@
     </td>
     <td><%= booking.rooms[0].room_type.name %></td>
     <td>
-      <% booking.rooms.each do |room| %>
-        <p class="badge badge-light"><%= room.number  %></p>
-        <br/>
+      <%= link_to booking_path(booking.id), method: :delete, :remote => true, data: {confirm: t(".confirm_delete")} do %>
+        <i class="fa fa-trash icon delete-icon" aria-hidden="true"></i>
       <% end %>
+      <i class="fa fa-pencil-square icon edit-icon" aria-hidden="true"></i>
     </td>
     <td><%= booking.refuse_reason %></td>
     <td><%= booking.user_star_rate %></td>

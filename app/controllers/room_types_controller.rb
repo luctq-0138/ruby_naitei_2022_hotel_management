@@ -31,6 +31,7 @@ class RoomTypesController < ApplicationController
 
   def show
     @room_type = RoomType.find_by id: params[:id]
+    @reviews = @room_type.reviews
     if @room_type
       @list_rooms = @room_type.rooms
     else

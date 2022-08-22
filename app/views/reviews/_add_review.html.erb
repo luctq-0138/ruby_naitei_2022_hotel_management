@@ -1,0 +1,23 @@
+<div class="review-add">
+  <%= form_for(:review, url: reviews_path) do |f| %>
+    <%= f.hidden_field :room_type_id, value: @room_type.id %>
+    <div class="d-flex align-items-center" style="margin-bottom: 10px">
+      <div style="margin-right: 10px"><%= t ".your_rating" %>: </div>
+      <div class="rating">
+        <%= f.radio_button :star, value="5", { :id => "5"} %>
+        <label for="5">☆</label>
+        <%= f.radio_button :star, value="4", { :id => "4" } %>
+        <label for="4">☆</label>
+        <%= f.radio_button :star, value="3", { :id => "3" } %>
+        <label for="3">☆</label>
+        <%= f.radio_button :star, value="2", { :id => "2"} %>
+        <label for="2">☆</label>
+        <%= f.radio_button :star, value="1", { :id => "1"} %>
+        <label for="1">☆</label>
+      </div>
+    </div>
+    <%= f.label :review_description, t ".review" %>
+    <%= f.text_area :review_description, :cols => 30, :rows => 8 %>
+    <button type="submit"><%= t ".submit"%></button>
+  <% end %>
+</div>

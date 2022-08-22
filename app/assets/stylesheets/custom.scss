@@ -215,7 +215,6 @@ booking_list_section {
 .badge-info {
   background-color: #17a2b8 !important;
 }
-
 .api-text h3 {
   color: #ffffff;
 }
@@ -247,4 +246,38 @@ booking_list_section {
 }
 .toast-message {
   font-size: 16px;
+}
+.rating {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+}
+
+.rating > input {
+  display: none;
+}
+
+.rating > label {
+  position: relative;
+  width: 30px;
+  font-size: 30px;
+  color: #f5b917;
+  cursor: pointer;
+}
+.rating > label::before {
+  content: '\2605';
+  position: absolute;
+  opacity: 0;
+}
+.rating > label:hover:before,
+.rating > label:hover ~ label:before {
+  opacity: 1 !important;
+}
+
+.rating > input:checked ~ label:before {
+  opacity: 1;
+}
+
+.rating:hover > input:checked ~ label:before {
+  opacity: 0.4;
 }
