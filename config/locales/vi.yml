@@ -50,6 +50,32 @@ vi:
       rooms_count_form: "Số phòng"
       rooms_opt: "Phòng"
       submit_btn: "Tìm kiếm phòng trống"
+    about:
+      about_us: "Về chúng tôi"
+      home: "Trang chủ"
+      welcome: "Chào mừng tới KingH"
+      hotel_intro: "Xây dựng vào năm 2015, khách sạn này nằm ở trung tâm thành phố Hà Nội, dễ dàng đi đến các địa điểm du lịch. Nơi đây cung cấp các phòng đầy đủ tiện nghi và trang nhã"
+      offer_1: "Giảm 20% cho chỗ ở."
+      offer_2: "Bữa ăn sáng hằng ngày miễn phí"
+      offer_3: "Có dịch vụ giặt đồ"
+      offer_4: "Miễn phí wifi."
+      offer_5: "Giảm 20% trên F&B"
+      restaurant_services: "Dịch vụ nhà hàng"
+      travel_camping: "Du lịch & Cắm trại"
+      event_party: "Sự kiện và Tiệc tùng"
+      discover_hotel: "Khám phá khách sạn và dịch vụ."
+      enjoy: "Hãy tận hưởng cùng với chúng tôi"
+      our_gallery: "Phòng trưng bày"
+      discover_work: "Khám phá công việc"
+      room_luxury: "Phòng sang trọng"
+    contact:
+      contact_info: "Thông tin liên lạc"
+      contact_open: "Chúng tôi hi vọng bạn sẽ hài lòng với dịch vụ tại khách sạn. Nếu có bất cứ vấn đề gì thì hãy liên hệ với chúng tôi"
+      address: "Địa chỉ"
+      phone: "Số điện thoại"
+      email: "Email"
+      fax: "Fax"
+      submit: "Xác nhận"
   admin:
     bookings:
       index:
@@ -213,7 +239,12 @@ vi:
       booking_rate: "Đánh giá"
       total_amount: "Tổng giá"
       actions: "Hành động"
+      not_found_booking: "Không thấy đơn đặt phòng nào"
+    destroy:
+      destroy_sucess: "Hủy đơn đặt phòng thành công"
+      destroy_fail: "Hủy đơn đặt phòng không thành công"
     booking:
       pending: "Chờ phê duyệt"
       approve: "Phê duyệt"
       refuse: "Từ chối"
+      confirm_delete: "Bạn có chắc chắn muốn xóa đơn đặt phòng này?"

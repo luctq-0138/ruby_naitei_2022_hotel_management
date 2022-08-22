@@ -29,8 +29,18 @@ class BookingsController < ApplicationController
   end
 
   def index
-    @pagy, @bookings = pagy current_user.bookings.all, page: params[:page],
+    @pagy, @bookings = pagy current_user.bookings.not_cancel, page: params[:page],
                                          items: Settings.page.admin_booking_tb_size
+  end
+
+  def destroy
+    booking = find_booking params[:id]
+    if booking.cancel!
+      flash[:success] = t ".destroy_success"
+    else
+      flash[:error] = t ".destroy_fail"
+    end
+    redirect_to bookings_path
   end
 
   private
@@ -71,7 +81,15 @@ class BookingsController < ApplicationController
     room = Room.find_by id: room_id
     return room if room
 
-    flash[:danger] = t
+    flash[:danger] = t ".not_found_room"
     redirect_to new_booki_path
+  end
+
+  def find_booking booking_id
+    booking = Booking.find_by id: booking_id
+    return booking if booking
+
+    flash[:danger] = t ".destroy_fail"
+    redirect_to bookings_path
   end
 end
