@@ -1,0 +1,167 @@
+<div>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
+  <%= link_to "Quay lại", admin_bookings_path, class:"btn btn-primary my-2 ml-5 ",style:"height:37px" %>
+  <div class="container">
+    <div class="team-single">
+      <div class="row">
+        <div class="col-lg-4 col-md-5 xs-margin-30px-bottom">
+          <div class="team-single-img">
+            <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="">
+          </div>
+          <div class="bg-light-gray padding-30px-all md-padding-25px-all sm-padding-20px-all text-center">
+            <h4 class="margin-10px-bottom font-size24 md-font-size22 sm-font-size20 font-weight-600">
+              <%= @booking.user.name%>
+            </h4>
+            <p class="sm-width-95 sm-margin-auto">
+              <%= @booking.user.email%>
+            </p>
+          </div>
+        </div>
+        <div class="col-lg-8 col-md-7">
+          <div class="team-single-text padding-50px-left sm-no-padding-left">
+            <h4 class="font-size38 sm-font-size32 xs-font-size30 font-weight-bold">Thông tin chi tiết</h4>
+            <div class="contact-info-section margin-40px-tb">
+              <ul class="list-style9 no-margin list-unstyled">
+                <li>
+                  <div class="row">
+                    <div class="col-md-5 col-5">
+                      <i class="far fa-file text-lightred"></i>
+                      <strong class="margin-10px-left text-lightred">Tên:</strong>
+                    </div>
+                    <div class="col-md-7 col-7">
+                      <p><%= @booking.user.name%></p>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="row">
+                    <div class="col-md-5 col-5">
+                      <i class="fas fa-map-marker-alt text-green"></i>
+                      <strong class="margin-10px-left text-green">Địa chỉ:</strong>
+                    </div>
+                    <div class="col-md-7 col-7">
+                      <p><%= @booking.user.address%></p>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="row">
+                    <div class="col-md-5 col-5">
+                      <i class="fas fa-mobile-alt text-purple"></i>
+                      <strong class="margin-10px-left xs-margin-four-left text-purple">Số điện thoại:</strong>
+                    </div>
+                    <div class="col-md-7 col-7">
+                      <p><%= @booking.user.phone_number%></p>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="row">
+                    <div class="col-md-5 col-5">
+                      <i class="fas fa-envelope text-pink"></i>
+                      <strong class="margin-10px-left xs-margin-four-left text-pink">Email:</strong>
+                    </div>
+                    <div class="col-md-7 col-7">
+                      <p><%= @booking.user.email %></p>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="row">
+                    <div class="col-md-5 col-5">
+                      <i class="fa fa-bed" aria-hidden="true"></i>
+                      <strong class="margin-10px-left xs-margin-four-left text-pink">Loại phòng:</strong>
+                    </div>
+                    <div class="col-md-7 col-7">
+                      <p><%=@booking.rooms[0].room_type.name%></p>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="row">
+                    <div class="col-md-5 col-5">
+                      <i class="fa fa-window-restore" aria-hidden="true"></i>
+                      <strong class="margin-10px-left xs-margin-four-left text-info">Trạng thái booking:</strong>
+                    </div>
+                    <div class="col-md-7 col-7">
+                      <% if @booking.pending?%>
+                        <span class="badge badge-secondary">
+                          Chờ phê duyệt
+                        </span>
+                      <% elsif @booking.approve? %>
+                        <span class="badge badge-success">
+                          Phê duyệt
+                        </span>
+                      <% elsif @booking.refuse?%>
+                        <span class="badge badge-danger">
+                          Từ chối
+                        </span>
+                      <% else %>
+                        <span class="badge badge-primary">
+                          Người dùng hủy booking
+                        </span>
+                      <% end %>
+                    </div>
+                  </div>
+                </li>
+                <br/>
+                <li>
+                  <div class="row">
+                    <div class="col-md-5 col-5">
+                      <i class="fa fa-hourglass-end" aria-hidden="true"></i>
+                      <strong class="margin-10px-left xs-margin-four-left text-gray">Thời gian:</strong>
+                    </div>
+                    <div class="col-md-7 col-7 d-flex align-items-center">
+                      <p>Từ: <%=@booking.booking_date.strftime(Settings.date.format)%></p>
+                      &nbsp;
+                      &nbsp;
+                      <p>Đến: <%=@booking.booking_date.strftime(Settings.date.format)%></p>
+                    </div>
+                  </div>
+                </li>
+                <br/>
+                <li>
+                  <div class="row">
+                    <div class="col-md-5 col-5">
+                      <i class="fa fa-sitemap" aria-hidden="true"></i>
+                      <strong class="margin-10px-left xs-margin-four-left text-orange">Danh sách các phòng đã đặt:</strong>
+                    </div>
+                    <div class="col-md-7 col-7 d-flex align-items-center">
+                      <p>
+                        <% @booking.rooms.each do |room| %>
+                          <p class="badge badge-light"><%= room.number  %></p>
+                          &nbsp;
+                        <% end %>
+                      </p>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <%# user feedback %>
+          <div class="team-single-text padding-50px-left sm-no-padding-left">
+            <h4 class="font-size38 sm-font-size32 xs-font-size30">Phản hồi của khách hàng</h4>
+            <div class="contact-info-section margin-40px-tb">
+              <ul class="list-style9 no-margin list-unstyled">
+                <li>
+                  <div class="row">
+                    <div class="col-md-5 col-5">
+                      <i class="far fa-file text-lightred"></i>
+                      <strong class="margin-10px-left text-lightred">Nội dung:</strong>
+                    </div>
+                    <div class="col-md-7 col-7">
+                      <p><%= @booking.user_star_rate %></p>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

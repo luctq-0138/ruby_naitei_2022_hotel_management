@@ -1,0 +1,16 @@
+<div class="cotainter w-75 m-auto">
+  <%= form_for(:session, url: login_path) do |f| %>
+    <%= f.label :name, "Tên loại phòng"  %>
+    <%= f.text_field :name, class: "form-control",value:@room_type.name %>
+    <%= f.label :area, "Diện tích" %>
+    <%= f.text_field :area, class: "form-control",value:@room_type.size  %>
+    <%= f.label :capacity, "Sức chứa" %>
+    <%= f.text_field :capacity, class: "form-control",value:@room_type.capacity  %>
+    <%= f.label :price, "Giá phòng" %>
+    <div class="input-group-prepend">
+      <span class="input-group-text" style="height:34px; font-size:15px">$/Pernight</span>
+      <%= f.text_field :price, class: "form-control",value:@room_type.cost  %>
+    </div>
+    <%= f.submit "Cập nhật", class: "btn btn-primary" %>
+  <% end %>
+</div>

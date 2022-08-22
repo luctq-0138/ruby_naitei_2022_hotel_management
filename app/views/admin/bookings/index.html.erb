@@ -4,9 +4,9 @@
     <div class="card">
       <!-- /.card-header -->
       <div class="card-body">
-        <form class="form-inline mb-3 w-100 col-12">
-          <input class="form-control mb-0 mr-5" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-primary my-2 mr-5" type="submit">Tìm kiếm</button>
+        <form class="form-inline mb-3 w-100 col-12 d-flex flex-nowrap">
+          <input class="form-control mb-0 mr-5 flex-shrink-0" style="width:90%" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-primary my-2 mr-5 " style="height:37px" type="submit">Tìm kiếm</button>
         </form>
         <table class="table table-bordered table-hover">
           <thead>
@@ -15,9 +15,11 @@
               <th><%= t(".check_in_date") %></th>
               <th><%= t(".check_out_date") %></th>
               <th><%= t(".status_booking") %></th>
+              <th>Lý do huỷ Booking</th>
               <th><%= t(".booking_owner") %></th>
-              <th><%= t(".booking_reject") %></th>
               <th><%= t(".booking_rate") %></th>
+              <th>Loại phòng</th>
+              <th>Số phòng</th>
               <th><%= t(".actions") %></th>
             </tr>
           </thead>

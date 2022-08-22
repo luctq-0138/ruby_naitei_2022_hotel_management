@@ -10,9 +10,9 @@
   </head>
   <body>
     <!-- Page Preloder -->
-    <%# <div id="preloder">
+    <div id="preloder">
       <div class="loader"></div>
-    </div> %>
+    </div>
     <%= render "layouts/header"%>
     <% flash.each do |message_type, message| %>
       <div class="alert alert-<%= message_type %>"><%= message %></div>

@@ -4,11 +4,13 @@
     <div class="card">
       <!-- /.card-header -->
       <div class="card-body">
-        <form class="form-inline mb-3 w-100 col-12">
-          <input class="form-control mb-0 mr-5" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-primary my-2 mr-5" type="submit">Tìm kiếm</button>
-          <button class="btn btn-primary my-2 mr-5" type="submit">Thêm</button>
+        <form class="form-inline mb-3 w-100 col-12 d-flex flex-nowrap">
+          <input class="form-control mb-0 mr-5 flex-shrink-0" style="width:80%" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-primary my-2 mr-5 " style="height:37px" type="submit">Tìm kiếm</button>
+          <%# new_admin_room_type_path %>
+          <%= link_to "Thêm mới", new_admin_room_type_path, class:"btn btn-primary my-2 mr-5 ",style:"height:37px" %>
         </form>
+        <%#  %>
         <table class="table table-bordered table-hover">
           <thead>
             <tr>

@@ -5,7 +5,15 @@
   <td><%= room_type.size %><% t ".m2" %></td>
   <td><%= room_type.capacity %></td>
   <td>
-    <i class="fa fa-trash icon delete-icon" aria-hidden="true"></i>
-    <i class="fa fa-pencil-square icon edit-icon" aria-hidden="true"></i>
-  </td>
+    <%= link_to admin_room_type_path(room_type.id), method: :delete, data: { confirm: "Bạn có chắc chắn muốn xóa phòng này?" }  do %>
+      <i class="fa fa-trash icon delete-icon" aria-hidden="true"></i>
+    <% end %>
+    <%= link_to edit_admin_room_type_path(room_type.id), method: :get do  %>
+      <i class="fa fa-pencil-square icon edit-icon" aria-hidden="true"></i>
+    <% end %>
+    <%# <i class="fa fa-trash icon delete-icon" aria-hidden="true"></i>
+      <i class="fa fa-pencil-square icon edit-icon" aria-hidden="true"> %>
+    <%# edit_admin_room_type_path %>
+  </i>
+</td>
 </tr>
