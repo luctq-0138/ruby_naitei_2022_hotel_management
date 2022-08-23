@@ -1,4 +1,9 @@
-$(".shb-booking-your-stay-wrapper").html("<%= j render("room_types/booking_form", rooms: @room_availables, room_type: @room_type, check_in: @check_in, check_out: @check_out) %>")
+$(".shb-booking-your-stay-wrapper").html("<%= j render("room_types/booking_form",
+                                          rooms: @room_availables,
+                                          room_type: @room_type,
+                                          check_in: @check_in,
+                                          check_out: @check_out) %>")
 $("#reset").click(function() {
-$(".shb-booking-your-stay-wrapper").html("<%= j render("room_types/check_available_form", room_type: @room_type) %>")
+$(".shb-booking-your-stay-wrapper").html("<%= j render("room_types/check_available_form",
+                                          room_type: @room_type) %>")
 });

@@ -1,5 +1,5 @@
 <h3><%= t ".your_reservation"%></h3>
-<%= form_for(:booking, url:get_room_available_path, html: {:onsubmit => "return validate();"}, remote: true) do |f| %>
+<%= form_for(:booking, url:get_room_available_path, method: "get", html: {onsubmit: "return validate();"}, remote: true) do |f| %>
   <div class="check-date">
     <%= f.label :date_in, t(".check_in") %>
     <%= f.text_field :date_in, class: "form-control date-input" %>
@@ -16,5 +16,5 @@
   <%= f.hidden_field :room_type, value: room_type.id %>
   <div id="list_room_available">
   </div>
-  <%= f.submit "Check Avalability", class: "check-avalability", data: { disable_with: false } %>
+  <%= f.submit t(".check_avalability"), class: "check-avalability", data: { disable_with: false } %>
 <% end %>

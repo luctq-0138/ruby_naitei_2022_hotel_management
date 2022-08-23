@@ -53,6 +53,8 @@ class RoomTypesController < ApplicationController
     end
   end
 
+  private
+
   def check_available room, check_in, check_out
     return true if room.bookings.length.zero?
 

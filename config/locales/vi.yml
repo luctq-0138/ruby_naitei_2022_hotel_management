@@ -206,6 +206,21 @@ vi:
       check_out: "Ngày trả"
       not_empty: "Không được để trống"
       booking: "Đặt phòng"
+    check_available_form:
+      your_reservation: "Đặt phòng của bạn"
+      check_in: "Ngày nhận"
+      check_out: "Ngày trả"
+      not_empty: "Không đươc để trống"
+      check_avalability: "Kiểm tra phòng trống"
+    booking_form:
+      your_reservation: "Đặt phòng của bạn"
+      reset: "Đặt lại"
+      check_in: "Ngày nhận"
+      check_out: "Ngày trả"
+      not_empty: "Không được để trống"
+      choose_room: "Hãy chọn 1 phòng"
+      list_rooms: "Danh sách phòng"
+      booking: "Đặt phòng"
   bookings:
     new:
       bookings: "Đặt phòng"

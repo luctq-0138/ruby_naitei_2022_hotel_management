@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     get "/login", to: "sessions#new"
     post "/login", to: "sessions#create"
     post "/save_bookings", to: "bookings#save_booking_session"
-    post "/get_room_available", to: "room_types#get_room_available"
+    get "/get_room_available", to: "room_types#get_room_available"
     delete "/logout", to: "sessions#destroy"
     post "/search", to: "room_types#search"
     resources :password_resets, only: %i(new create edit update)

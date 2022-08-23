@@ -16,19 +16,24 @@
 <div class="form-container">
   <div>
     <%= form_for(@user) do |f| %>
-      <%= render "shared/error_messages", object: f.object %>
-      <%= f.label :name, t(".form.name"), :class => "required" %>
+      <%= f.label :name, t(".form.name"), class: "required" %>
       <%= f.text_field :name, class: "form-control" %>
-      <%= f.label :email, t(".form.email"), :class => "required" %>
+      <%= raw error_message(@user, :name) %>
+      <%= f.label :email, t(".form.email"), class: "required" %>
       <%= f.email_field :email, class: "form-control" %>
-      <%= f.label :phone_number, "Phone Number", :class => "required" %>
-      <%= f.text_field :phone_number, class: "form-control" %>
-      <%= f.label :address, "Address", :class => "required" %>
+      <%= raw error_message(@user, :email) %>
+      <%= f.label :phone_number, "Phone Number", class: "required" %>
+      <%= f.number_field :phone_number, class: "form-control" %>
+      <%= raw error_message(@user, :phone_number) %>
+      <%= f.label :address, "Address", class: "required" %>
       <%= f.text_field :address, class: "form-control" %>
-      <%= f.label :password, t(".form.password"), :class => "required" %>
+      <%= raw error_message(@user, :address) %>
+      <%= f.label :password, t(".form.password"), class: "required" %>
       <%= f.password_field :password, class: "form-control" %>
-      <%= f.label :password_confirmation, t(".form.password_confirm"), :class => "required" %>
+      <%= raw error_message(@user, :password) %>
+      <%= f.label :password_confirmation, t(".form.password_confirm"), class: "required" %>
       <%= f.password_field :password_confirmation, class: "form-control" %>
+      <%= raw error_message(@user, :password_confirmation) %>
       <%= f.submit t(".sign_up"), class: "btn btn-primary" %>
     <% end %>
   </div>
