@@ -222,6 +222,21 @@ en:
       check_out: "Check out"
       not_empty: "Can't not empty"
       booking: "Booking"
+    check_available_form:
+      your_reservation: "Your reservation"
+      check_in: "Check in"
+      check_out: "Check out"
+      not_empty: "Can't not blank"
+      check_avalability: "Check avalability"
+    booking_form:
+      your_reservation: "Your reservation"
+      reset: "Reset"
+      check_in: "Check in"
+      check_out: "Check out"
+      not_empty: "Can't not empty"
+      choose_room: "Please cho a room"
+      list_rooms: "List room"
+      booking: "Booking"
   bookings:
     new:
       bookings: "Bookings"

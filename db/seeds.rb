@@ -81,12 +81,13 @@ time_unit=["days", "weeks"]
 users = User.all
 20.times do |n|
   booking_date = Time.zone.today.strftime(Settings.date.format)
-  check_in = Faker::Date.between(from: '2022/08/18', to: '2022/08/25').strftime(Settings.date.format)
-  check_out = Faker::Date.between(from: '2022/08/25', to: '2022/08/30').strftime(Settings.date.format)
+  check_in = Faker::Date.between(from: Time.now, to: Time.now + 5.days).strftime(Settings.date.format)
+  check_out = Faker::Date.between(from: Time.now + 5.days, to: Time.now + 5.days).strftime(Settings.date.format)
   user = users.shuffle.first
   booking = user.bookings.create!(booking_date: booking_date,
                            check_in: check_in,
-                           check_out: check_out)
+                           check_out: check_out,
+                           status: 1)
   2.times do
     booking.room_bookeds.create!(room: rooms[rand(rooms.size)])
   end

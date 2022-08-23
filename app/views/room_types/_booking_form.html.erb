@@ -1,0 +1,31 @@
+<div class="d-flex align-items-center justify-content-between">
+  <h3><%= t ".your_reservation"%></h3>
+  <button id="reset"><%= t ".reset" %></button>
+</div>
+<%= form_for(:booking, url: save_bookings_path, html: {onsubmit: "return validate();"}) do |f| %>
+  <div class="check-date mb-0">
+    <%= f.label :date_in, t(".check_in") %>
+    <%= f.text_field :date_in, class: "form-control date-input", value: check_in, readonly: true  %>
+    <i class="fa fa-calendar"></i>
+  </div>
+  <div id="date_in" class="invalid mb-2"><%= t ".not_empty"%></div>
+  <div class="check-date mb-0">
+    <%= f.label :date_out, t(".check_out") %>
+    <%= f.text_field :date_out, class: "form-control date-input", value: check_out, readonly: true %>
+    <i class="fa fa-calendar"></i>
+  </div>
+  <div id="date_out" class="invalid mb-2"><%= t ".not_empty"%></div>
+  <div id="list_room_available">
+    <h3 class="list_rooms"><%= t ".list_rooms" %></h3>
+    <div id="list_rooms" class="invalid"><%= t ".choose_room"%></div>
+    <div class="grid-container">
+      <% rooms.each do |room| %>
+        <div class="room-id" style="display: none"><%= room.id %></div>
+        <div class="grid-item grid-item-available" onclick="roomSelect(this)"><%= room.number %></div>
+      <% end %>
+    </div>
+  </div>
+  <%= f.hidden_field :input_rooms %>
+  <%= f.hidden_field :room_type, value: @room_type.id %>
+  <%= f.submit t(".booking"), class: "btn btn-primary mt-5", data: { disable_with: false } %>
+<% end %>
