@@ -132,6 +132,8 @@ GEM
     faker (2.22.0)
       i18n (>= 1.8.11, < 2)
     ffi (1.15.5)
+    figaro (1.2.0)
+      thor (>= 0.14.0, < 2)
     font-awesome-rails (4.7.0.8)
       railties (>= 3.2, < 8.0)
     forest_liana (7.6.11)
@@ -384,6 +386,7 @@ DEPENDENCIES
   capybara (>= 3.26)
   config
   faker (= 2.22.0)
+  figaro
   font-awesome-rails
   forest_liana (~> 7.6)
   image_processing (~> 1.2)

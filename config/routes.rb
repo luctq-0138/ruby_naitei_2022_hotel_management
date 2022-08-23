@@ -10,6 +10,8 @@ Rails.application.routes.draw do
     post "/login", to: "sessions#create"
     post "/save_bookings", to: "bookings#save_booking_session"
     delete "/logout", to: "sessions#destroy"
+    resources :password_resets, only: %i(new create edit update)
+    resources :account_activations, only: %i(edit)
     resources :bookings, only: %i(create index new destroy)
     resources :room_types,  only: %i(index show)
     resources :users
