@@ -1,6 +1,6 @@
 class Admin::RoomTypesController < Admin::BaseController
   def index
-    @pagy, @room_types = pagy RoomType.all, page: params[:page],
+    @pagy, @room_types = pagy RoomType.all.newest, page: params[:page],
                                             items: Settings.page.admin_rooms_tb_size
   end
 

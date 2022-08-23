@@ -34,7 +34,7 @@ en:
     create:
       login_success: "Welcome to our hotel"
       login_fail: "Email or password is invalid"
-      account_not_actived: "Account not activated. Check your email for the activation link."
+      account_not_activated: "Account not activated. Check your email for the activation link."
   static_pages:
     home:
       title: "Welcome to my hotel"

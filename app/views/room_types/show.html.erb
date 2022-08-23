@@ -85,40 +85,9 @@
         </div>
       </div>
       <div class="col-lg-4">
-        <div class="room-booking">
-          <h3 class="list_rooms"><%= t ".list_rooms" %></h3>
-          <div id="list_rooms" class="invalid"><%= t ".choose_room"%></div>
-          <div class="grid-container">
-            <% @list_rooms.each do |room| %>
-              <% if room.is_available %>
-                <div class="room-id" style="display: none"><%= room.id %></div>
-                <div class="grid-item grid-item-available" onclick="roomSelect(this)"><%= room.number %></div>
-              <% else %>
-                <div class="grid-item not-available"><%= room.number %></div>
-              <% end %>
-            <% end %>
-          </div>
-        </div>
         <div class="shb-mobile-sidebar">
           <div class="shb-booking-your-stay-wrapper">
-            <h3><%= t ".your_reservation"%></h3>
-            <%= form_for(:booking, url: save_bookings_path, html: {:onsubmit => "return validate();"}) do |f| %>
-              <div class="check-date">
-                <%= f.label :date_in, t(".check_in") %>
-                <%= f.text_field :date_in, class: "form-control date-input" %>
-                <i class="fa fa-calendar"></i>
-              </div>
-              <div id="date_in" class="invalid"><%= t ".not_empty"%></div>
-              <div class="check-date">
-                <%= f.label :date_out, t(".check_out") %>
-                <%= f.text_field :date_out, class: "date-input" %>
-                <i class="fa fa-calendar"></i>
-              </div>
-              <div id="date_out" class="invalid"><%= t ".not_empty"%></div>
-              <%= f.hidden_field :input_rooms %>
-              <%= f.hidden_field :room_type, value: @room_type.id %>
-              <%= f.submit t(".booking"), class: "btn btn-primary", data: { disable_with: false } %>
-            <% end %>
+            <%= render "check_available_form", room_type: @room_type %>
           </div>
         </div>
       </div>

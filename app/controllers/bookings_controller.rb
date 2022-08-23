@@ -3,7 +3,6 @@ class BookingsController < ApplicationController
 
   def new
     @booking = session[:booking]
-    @check_in = session[:booking]["check_in"]
     @room_type = find_room_type @booking["room_type"]
     @rooms = @booking["rooms"].map do |room_id|
       Room.find_by id: room_id
@@ -29,7 +28,7 @@ class BookingsController < ApplicationController
   end
 
   def index
-    @pagy, @bookings = pagy current_user.bookings.not_cancel, page: params[:page],
+    @pagy, @bookings = pagy current_user.bookings.not_cancel.newest, page: params[:page],
                                          items: Settings.page.admin_booking_tb_size
   end
 

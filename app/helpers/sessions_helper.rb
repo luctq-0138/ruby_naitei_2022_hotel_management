@@ -13,7 +13,7 @@ module SessionsHelper
         redirect_to admin_root_url
       end
     else
-      flash[:warning] = t ".account_not_activated"
+      flash[:error] = t ".account_not_activated"
       redirect_to root_url
     end
   end

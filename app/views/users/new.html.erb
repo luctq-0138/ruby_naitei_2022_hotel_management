@@ -1,15 +1,33 @@
+<div class="breadcrumb-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="breadcrumb-text">
+          <h2>Sign up</h2>
+          <div class="bt-option">
+            <%= link_to t(".home"), root_path %>
+            <span>Sign up</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 <div class="form-container">
-  <h1 class="title"><%= t ".welcome_hotel"%></h1>
   <div>
     <%= form_for(@user) do |f| %>
       <%= render "shared/error_messages", object: f.object %>
-      <%= f.label :name, t(".form.name") %>
+      <%= f.label :name, t(".form.name"), :class => "required" %>
       <%= f.text_field :name, class: "form-control" %>
-      <%= f.label :email, t(".form.email") %>
+      <%= f.label :email, t(".form.email"), :class => "required" %>
       <%= f.email_field :email, class: "form-control" %>
-      <%= f.label :password, t(".form.password") %>
+      <%= f.label :phone_number, "Phone Number", :class => "required" %>
+      <%= f.text_field :phone_number, class: "form-control" %>
+      <%= f.label :address, "Address", :class => "required" %>
+      <%= f.text_field :address, class: "form-control" %>
+      <%= f.label :password, t(".form.password"), :class => "required" %>
       <%= f.password_field :password, class: "form-control" %>
-      <%= f.label :password_confirmation, t(".form.password_confirm") %>
+      <%= f.label :password_confirmation, t(".form.password_confirm"), :class => "required" %>
       <%= f.password_field :password_confirmation, class: "form-control" %>
       <%= f.submit t(".sign_up"), class: "btn btn-primary" %>
     <% end %>

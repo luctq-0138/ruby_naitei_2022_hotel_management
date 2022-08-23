@@ -1,0 +1,6 @@
+<h3 class="list_rooms"><%= t ".list_rooms" %></h3>
+<div class="grid-container">
+  <% rooms.each do |room| %>
+    <div class="grid-item grid-item-available" onclick="roomSelect(this)"><%= room.number %></div>
+  <% end %>
+</div>

@@ -1,6 +1,6 @@
 $(document).on('turbolinks:load', function () {
   $('.loader').fadeOut();
-  $('#preloder').delay(200).fadeOut('slow');
+  $('#preloder').delay(350).fadeOut('slow');
 });
 $(document).on('turbolinks:load', function () {
   ('use strict');

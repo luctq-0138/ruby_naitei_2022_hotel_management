@@ -1,5 +1,4 @@
 class SessionsController < ApplicationController
-  layout "layouts/application_login_signup", only: %i(create new)
   before_action :not_logged_in, only: %i(create new)
   def new; end
 
@@ -8,7 +7,7 @@ class SessionsController < ApplicationController
     if user&.authenticate(params[:session][:password])
       handle_login user
     else
-      flash.now[:danger] = t ".login_fail"
+      flash.now[:error] = t ".login_fail"
       render :new
     end
   end

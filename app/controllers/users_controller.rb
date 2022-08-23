@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-  layout "layouts/application_login_signup", only: :new
   before_action :find_user, except: %i(index new create)
   before_action :logged_in_user, :must_be_user, except: %i(create new)
 
@@ -13,10 +12,10 @@ class UsersController < ApplicationController
     @user = User.new user_params
     if @user.save
       @user.send_activation_email
-      flash[:info] = t ".mail_notice"
+      flash[:success] = t ".mail_notice"
       redirect_to root_url
     else
-      flash[:danger] = t ".signup_fail"
+      flash.now[:error] = t ".signup_fail"
       render :new
     end
   end
@@ -32,7 +31,7 @@ class UsersController < ApplicationController
   private
   def user_params
     params.require(:user)
-          .permit(:name, :email, :password, :password_confirmation)
+          .permit(:name, :email, :phone_number, :address, :password, :password_confirmation)
   end
 
   def find_user

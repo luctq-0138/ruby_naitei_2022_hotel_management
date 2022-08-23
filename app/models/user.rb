@@ -20,6 +20,9 @@ class User < ApplicationRecord
   validates :password, presence: true,
                        length: {minimum: Settings.valid.password_min_len},
                        allow_nil: true
+  validates :phone_number, presence: true
+
+  validates :address, presence: true
   class << self
     def digest string
       cost = if ActiveModel::SecurePassword.min_cost
