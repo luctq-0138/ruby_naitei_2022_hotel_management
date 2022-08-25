@@ -1,0 +1,20 @@
+<h3><%= t ".your_reservation"%></h3>
+<%= form_for(:booking, url:get_room_available_path, method: "get", html: {onsubmit: "return validate();"}, remote: true) do |f| %>
+  <div class="check-date">
+    <%= f.label :date_in, t(".check_in") %>
+    <%= f.text_field :date_in, class: "form-control date-input" %>
+    <i class="fa fa-calendar"></i>
+  </div>
+  <div id="date_in" class="invalid"><%= t ".not_empty"%></div>
+  <div class="check-date">
+    <%= f.label :date_out, t(".check_out") %>
+    <%= f.text_field :date_out, class: "date-input" %>
+    <i class="fa fa-calendar"></i>
+  </div>
+  <div id="date_out" class="invalid"><%= t ".not_empty"%></div>
+  <%= f.hidden_field :input_rooms %>
+  <%= f.hidden_field :room_type, value: room_type.id %>
+  <div id="list_room_available">
+  </div>
+  <%= f.submit t(".check_avalability"), class: "check-avalability", data: { disable_with: false } %>
+<% end %>
