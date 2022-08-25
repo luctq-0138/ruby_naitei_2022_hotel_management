@@ -1,7 +1,7 @@
 class Admin::RoomTypesController < Admin::BaseController
   before_action :find_room_type, only: %i(edit update destroy)
   def index
-    @pagy, @room_types = pagy RoomType.all.newest, page: params[:page],
+    @pagy, @room_types = pagy RoomType.search(params), page: params[:page],
                                             items: Settings.page.admin_rooms_tb_size
   end
 

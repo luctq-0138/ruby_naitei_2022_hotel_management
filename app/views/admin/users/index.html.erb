@@ -4,6 +4,10 @@
     <div class="card">
       <!-- /.card-header -->
       <div class="card-body">
+        <%= form_tag(admin_users_path, method: "get", class: "form-inline mb-3 w-100 col-12 d-flex flex-nowrap") do %>
+          <%= text_field_tag :search_input, params[:search_input], placeholder: 'Search', class: "form-control mb-0 mr-5 flex-shrink-0 ", style: "width: 90%"%>
+          <%= submit_tag 'Search', class: "btn btn-primary my-2 mr-5" %>
+        <% end %>
         <table  class="table table-bordered table-hover">
           <thead>
             <tr>

@@ -7,6 +7,8 @@ class User < ApplicationRecord
   has_many :reviews, dependent: :destroy
   has_secure_password
 
+  scope :search_name, ->(name){where("name LIKE ?", "%#{name}%") if name.present?}
+
   before_save :downcase_email
   before_create :create_activation_digest
 
