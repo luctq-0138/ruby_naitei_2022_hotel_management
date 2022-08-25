@@ -1,22 +1,28 @@
 <div class="cotainter w-75 m-auto">
   <h1>Tạo phòng mới</h1>
-  <%= form_for(:room_type, url: admin_room_types_path, method: :post) do |f| %>
+  <%= form_for(@room_type, url: admin_room_types_path, method: :post) do |f| %>
     <%= f.label :name, "Tên loại phòng" %>
     <%= f.text_field :name, class: "form-control" %>
+    <%= raw error_message(@room_type, :name) %>
     <%= f.label :image, "Ảnh"  %>
     <%= f.text_field :image, class: "form-control" %>
+    <%= raw error_message(@room_type, :image) %>
     <%= f.label :size, "Diện tích" %>
     <%= f.number_field :size, class: "form-control"  %>
+    <%= raw error_message(@room_type, :size) %>
     <%= f.label :capacity, "Sức chứa" %>
     <%= f.number_field :capacity, class: "form-control" %>
+    <%= raw error_message(@room_type, :capacity) %>
     <%= f.label :cost, "Giá phòng" %>
     <div class="input-group-prepend">
       <span class="input-group-text" style="height:34px; font-size:15px">$/Tiếng</span>
       <%= f.number_field :cost, class: "form-control"  %>
+      <%= raw error_message(@room_type, :cost) %>
     </div>
     <%= f.label :rooms, "Nhập các phòng:" %>
     <span class="input-group-text">ProTip: Nhấn Enter để tạo tags</span>
     <%= f.text_area :rooms, class: "form-control tags-input" %>
+    <%= raw error_message(@room_type, :rooms) %>
     <%= f.label :services, "Dịch vụ" %>
     <%= f.text_area :services, cols: 30, rows: 8 %>
     <%= f.label :description, "Mô tả" %>

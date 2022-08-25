@@ -5,26 +5,31 @@
     <!-- /.card-header -->
     <div class="card-body">
       <p>Filters: <span class="filters"></span></p>
-      <div class="btn-group">
-        <button type="button" class="btn btn-default dropdown-toggle">
-          <span class="glyphicon glyphicon-filter"></span>
-          <span class="sr-only">Filters</span>
-        </button>
-        <%= form_with(url: admin_room_types_path, method: "get") do |f| %>
-          <ul class="dropdown-menu dropdown-menu-filter">
-            <li>
-              <%= f.label :name, "Name"%>
-              <%= f.text_field :name, class: "form-control date-input", value: params[:name] %>
-            </li>
-            <%= f.submit 'Search', class: "btn btn-primary" %>
-          </ul>
-        <% end %>
+      <div class="d-flex justify-content-between">
+        <div class="btn-group btn-filter">
+          <button type="button" class="btn btn-default dropdown-toggle">
+            <span class="glyphicon glyphicon-filter"></span>
+            <span class="sr-only">Filters</span>
+          </button>
+          <%= form_with(url: admin_room_types_path, method: "get") do |f| %>
+            <ul class="dropdown-menu dropdown-menu-filter">
+              <li>
+                <%= f.label :name, "Name"%>
+                <%= f.text_field :name, class: "form-control date-input", value: params[:name] %>
+              </li>
+              <%= f.submit 'Search', class: "btn btn-primary" %>
+            </ul>
+          <% end %>
+        </div>
+        <%= link_to "Thêm mới", new_admin_room_type_path, class:"btn btn-primary",style:"height:37px" %>
       </div>
-      <%= form_tag(admin_room_types_path, method: "get", class: "form-inline mb-3 w-100 col-12 d-flex flex-nowrap") do %>
-        <%= text_field_tag :search_input, params[:search_input], placeholder: 'Search', class: "form-control mb-0 mr-5 flex-shrink-0 ", style: "width: 80%"%>
-        <%= submit_tag 'Search', class: "btn btn-primary my-2 mr-5" %>
-        <%= link_to "Thêm mới", new_admin_room_type_path, class:"btn btn-primary my-2 mr-5 ",style:"height:37px" %>
-      <% end %>
+      <!--
+        <%= form_tag(admin_room_types_path, method: "get", class: "form-inline mb-3 w-100 col-12 d-flex flex-nowrap") do %>
+          <%= text_field_tag :search_input, params[:search_input], placeholder: 'Search', class: "form-control mb-0 mr-5 flex-shrink-0 ", style: "width: 80%"%>
+          <%= submit_tag 'Search', class: "btn btn-primary my-2 mr-5" %>
+          <%= link_to "Thêm mới", new_admin_room_type_path, class:"btn btn-primary my-2 mr-5 ",style:"height:37px" %>
+        <% end %>
+      -->
       <%#  %>
       <% if @room_types.any? %>
         <table class="table table-bordered table-hover">

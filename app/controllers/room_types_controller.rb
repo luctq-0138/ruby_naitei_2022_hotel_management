@@ -31,11 +31,11 @@ class RoomTypesController < ApplicationController
 
   def show
     @room_type = RoomType.find_by id: params[:id]
-    @reviews = @room_type.reviews
+    @reviews = @room_type.reviews.newest
     if @room_type
       @list_rooms = @room_type.rooms
     else
-      flash[:danger] = t ".find_fail"
+      flash.now[:error] = t ".find_fail"
       redirect_to room_types_path
     end
   end

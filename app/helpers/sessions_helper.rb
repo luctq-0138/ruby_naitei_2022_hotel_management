@@ -65,7 +65,7 @@ module SessionsHelper
     return if logged_in?
 
     store_location
-    flash[:danger] = t "users.require_login"
+    flash.now[:error] = t "users.require_login"
     redirect_to login_path
   end
 

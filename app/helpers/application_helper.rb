@@ -11,8 +11,13 @@ module ApplicationHelper
     end.join("\n").html_safe
   end
   # rubocop:enable Rails/OutputSafety
+
   def error_message object, field
     message = object.errors[field].first if object.errors[field].present?
     content_tag(:div, message, class: "text-danger")
+  end
+
+  def hello
+    "hello"
   end
 end

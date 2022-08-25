@@ -8,6 +8,10 @@ class User < ApplicationRecord
   has_secure_password
 
   scope :search_name, ->(name){where("name LIKE ?", "%#{name}%") if name.present?}
+  scope :newest, ->{order created_at: :desc}
+  scope :search, lambda {|params|
+    search_name(params[:name])
+  }
 
   before_save :downcase_email
   before_create :create_activation_digest

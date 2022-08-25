@@ -15,7 +15,7 @@ class UsersController < ApplicationController
       flash[:success] = t ".mail_notice"
       redirect_to root_url
     else
-      flash.now[:error] = t ".signup_fail"
+      flash.now[:error] = t ".create_fail"
       render :new
     end
   end
@@ -38,7 +38,7 @@ class UsersController < ApplicationController
     @user = User.find_by id: params[:id]
     return if @user
 
-    flash[:danger] = t ".find_fail"
+    flash.now[:error] = t ".find_fail"
     redirect_to root_path
   end
 end

@@ -5,7 +5,7 @@
     <!-- /.card-header -->
     <div class="card-body">
       <p>Filters: <span class="filters"></span></p>
-      <div class="btn-group">
+      <div class="btn-group btn-filter">
         <button type="button" class="btn btn-default dropdown-toggle">
           <span class="glyphicon glyphicon-filter"></span>
           <span class="sr-only">Filters</span>
@@ -20,7 +20,7 @@
               <%= f.label :check_out, "Check out"%>
               <%= f.text_field :check_out, class: "form-control", value: params[:check_out] %>
               <%= f.label :status, "Status"%>
-              <%= select_tag(:status, options_for_select([["pending","0"], ["approve","1"],["refuse","2"],["cancel","3"],["paid","4"]], params[:status]), class: "form-control") %>
+              <%= select_tag(:status, options_for_select([["all",""],["pending","0"], ["approve","1"],["refuse","2"],["cancel","3"],["paid","4"]], params[:status]), class: "form-control") %>
             </li>
             <%= f.submit 'Search', class: "btn btn-primary" %>
           </ul>

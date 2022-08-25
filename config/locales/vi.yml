@@ -265,7 +265,7 @@ vi:
       actions: "Hành động"
       not_found_booking: "Không thấy đơn đặt phòng nào"
     destroy:
-      destroy_sucess: "Hủy đơn đặt phòng thành công"
+      destroy_success: "Hủy đơn đặt phòng thành công"
       destroy_fail: "Hủy đơn đặt phòng không thành công"
     booking:
       pending: "Chờ phê duyệt"
@@ -277,6 +277,7 @@ vi:
   account_activations:
     edit:
       user_unsuccess: "Kích họat không hợp lệ"
+    handle_active_account:
       user_success: "Tài khoản đã được kích hoạt"
     find_user:
       active_account_fail: "Kích hoạt tài khoản không thành công, không tìm thấy người dùng"

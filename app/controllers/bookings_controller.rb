@@ -37,7 +37,7 @@ class BookingsController < ApplicationController
     if booking.cancel!
       flash[:success] = t ".destroy_success"
     else
-      flash[:error] = t ".destroy_fail"
+      flash.now[:error] = t ".destroy_fail"
     end
     redirect_to bookings_path
   end
@@ -53,7 +53,7 @@ class BookingsController < ApplicationController
                                            check_out: check_out)
     return booking if booking
 
-    flash[:danger] = t ".booking_error"
+    flash.now[:error] = t ".booking_error"
     redirect_to new_booking_path
   end
 
@@ -62,7 +62,7 @@ class BookingsController < ApplicationController
     session[:booking]["rooms"].each do |room_id|
       room = find_room room_id
       unless booking.room_bookeds.create(room: room)
-        flash[:danger] = t ".booking_error"
+        flash.now[:error] = t ".booking_error"
         redirect_to new_booking_path
       end
     end
@@ -72,7 +72,7 @@ class BookingsController < ApplicationController
     room_type = RoomType.find_by id: room_type_id
     return room_type if room_type
 
-    flash[:danger] = t ".not_found_room_type"
+    flash.now[:error] = t ".not_found_room_type"
     redirect_to new_booking_path
   end
 
@@ -80,7 +80,7 @@ class BookingsController < ApplicationController
     room = Room.find_by id: room_id
     return room if room
 
-    flash[:danger] = t ".not_found_room"
+    flash.now[:error] = t ".not_found_room"
     redirect_to new_booking_path
   end
 
@@ -88,7 +88,7 @@ class BookingsController < ApplicationController
     booking = Booking.find_by id: booking_id
     return booking if booking
 
-    flash[:danger] = t ".destroy_fail"
+    flash.now[:error] = t ".destroy_fail"
     redirect_to bookings_path
   end
 end

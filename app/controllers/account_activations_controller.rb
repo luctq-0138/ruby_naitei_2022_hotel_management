@@ -5,7 +5,7 @@ class AccountActivationsController < ApplicationController
     if @user && !@user.activated? && @user.authenticated?(:activation, params[:id])
       handle_active_account @user
     else
-      flash[:danger] = t ".user_unsuccess"
+      flash.now[:error] = t ".user_unsuccess"
       redirect_to signup_path
     end
   end
@@ -16,14 +16,14 @@ class AccountActivationsController < ApplicationController
     @user = User.find_by(email: params[:email])
     return if @user
 
-    flash[:danger] = t ".active_account_fail"
+    flash.now[:error] = t ".active_account_fail"
     redirect_to root_path
   end
 
   def handle_active_account user
     user.activate
     log_in user
-    flash[:success] = t ".user_success"
+    flash.now[:success] = t ".user_success"
     redirect_to root_path
   end
 end

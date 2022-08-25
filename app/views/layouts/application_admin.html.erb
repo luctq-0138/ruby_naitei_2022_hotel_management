@@ -71,6 +71,7 @@
     </aside>
     <div style="margin-left:var(--side-bar-width)">
       <%= yield %>
+      <div style={z-index: 9999999}><%= toastr_flash %></div>
     </div>
   </body>
 </html>

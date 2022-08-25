@@ -26,8 +26,10 @@
               <div class="rdt-left">
                 <h3><%= @room_type.name %></h3>
                 <div class="rating">
-                  <% @room_type.reviews.average(:star_rate).floor.times do %>
-                    <i class="fa fa-star"></i>
+                  <% unless @room_type.reviews.length.zero? %>
+                    <% @room_type.reviews.average(:star_rate).floor.times do %>
+                      <i class="fa fa-star"></i>
+                    <% end %>
                   <% end %>
                 </div>
               </div>

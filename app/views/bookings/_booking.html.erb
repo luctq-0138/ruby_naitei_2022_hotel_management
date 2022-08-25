@@ -1,28 +1,25 @@
 <tr>
   <% if !booking.cancel? %>
-    <td><%= booking.booking_date %></td>
-    <td><%= booking.check_in %></td>
-    <td><%= booking.check_out %></td>
+    <td><%= booking.booking_date.strftime(Settings.date.format) %></td>
+    <td><%= booking.check_in.strftime(Settings.date.format) %></td>
+    <td><%= booking.check_out.strftime(Settings.date.format) %></td>
     <td>
       <%= check_status booking %>
     </td>
-    <td><%= booking.rooms[0].room_type.name %></td>
+    <td><%= link_to booking.rooms[0].room_type.name, booking.rooms[0].room_type  %></td>
     <td>
-      <%= link_to booking_path(booking.id), method: :delete, :remote => true, data: {confirm: t(".confirm_delete")} do %>
-        <i class="fa fa-trash icon delete-icon" aria-hidden="true"></i>
+      <% booking.rooms.each do |room| %>
+        <p class="badge badge-light"><%= room.number  %></p>
+        <br/>
       <% end %>
-      <i class="fa fa-pencil-square icon edit-icon" aria-hidden="true"></i>
     </td>
-    <td><%= booking.refuse_reason %></td>
-    <td><%= booking.user_star_rate %></td>
     <th><%= booking.rooms.length * booking.rooms[0].room_type.cost %>$</th>
-    <td>
-      <% if !booking.approve? %>
-        <td>
-          <%= link_to booking_path(booking.id), method: :delete, :remote => true, data: {confirm: t(".confirm_delete")} do %>
-            <i class="fa fa-trash icon delete-icon" aria-hidden="true"></i>
-          <% end %>
+    <% if !booking.approve? && !booking.paid? %>
+      <td>
+        <%= link_to booking_path(booking.id), method: :delete, :remote => true, data: {confirm: t(".confirm_delete")} do %>
+          <i class="fa fa-trash icon delete-icon" aria-hidden="true"></i>
         <% end %>
       </td>
     <% end %>
-  </tr>
+  <% end %>
+</tr>

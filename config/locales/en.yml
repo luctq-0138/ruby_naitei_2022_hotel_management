@@ -283,7 +283,7 @@ en:
       actions: "Actions"
       not_found_booking: "Not found any booking"
     destroy:
-      destroy_sucess: "Destroy booking success"
+      destroy_success: "Destroy booking success"
       destroy_fail: "Destroy booking fail"
     booking:
       pending: "Pending"
@@ -294,6 +294,7 @@ en:
   account_activations:
     edit:
       user_unsuccess: "Invalid activation link"
+    handle_active_account:
       user_success: "Account activated"
     find_user:
       active_account_fail: "Active account fail, not found user"

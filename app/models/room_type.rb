@@ -8,8 +8,7 @@ class RoomType < ApplicationRecord
                                 allow_destroy: true
 
   validates :name, :image, presence: true
-  validates :size, :cost, :capacity, presence: true,
-                                     numericality: {only_integer: true}
+  validates :size, :cost, :capacity, presence: true
   validates_associated :rooms
 
   scope :newest, ->{order created_at: :desc}
