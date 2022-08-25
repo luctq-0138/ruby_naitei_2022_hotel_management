@@ -4,6 +4,11 @@
   <td><%= room_type.cost %>$/<%= t ".pernight" %></td>
   <td><%= room_type.size %><% t ".m2" %></td>
   <td><%= room_type.capacity %></td>
+  <td class="col col-2">
+    <% room_type.rooms.each do |room| %>
+      <p class="badge badge-light"><%= room.number  %></p>
+    <% end %>
+  </td>
   <td>
     <%= link_to admin_room_type_path(room_type.id), method: :delete, data: { confirm: "Bạn có chắc chắn muốn xóa phòng này?" }  do %>
       <i class="fa fa-trash icon delete-icon" aria-hidden="true"></i>

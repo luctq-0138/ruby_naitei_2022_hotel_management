@@ -1,4 +1,5 @@
 <div class="cotainter w-75 m-auto">
+  <h1>Tạo phòng mới</h1>
   <%= form_for(:room_type, url: admin_room_types_path, method: :post) do |f| %>
     <%= f.label :name, "Tên loại phòng" %>
     <%= f.text_field :name, class: "form-control" %>
@@ -13,6 +14,9 @@
       <span class="input-group-text" style="height:34px; font-size:15px">$/Tiếng</span>
       <%= f.number_field :cost, class: "form-control"  %>
     </div>
+    <%= f.label :rooms, "Nhập các phòng:" %>
+    <span class="input-group-text">ProTip: Nhấn Enter để tạo tags</span>
+    <%= f.text_area :rooms, class: "form-control tags-input" %>
     <%= f.label :services, "Dịch vụ" %>
     <%= f.text_area :services, cols: 30, rows: 8 %>
     <%= f.label :description, "Mô tả" %>
