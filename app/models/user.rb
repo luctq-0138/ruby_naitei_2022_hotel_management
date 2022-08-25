@@ -25,6 +25,9 @@ class User < ApplicationRecord
 
   validates :address, presence: true
 
+  scope :search_name, ->(name){where("name LIKE ?", "%#{name}%") if name.present?}
+  scope :newest, ->{order created_at: :desc}
+
   class << self
     def digest string
       cost = if ActiveModel::SecurePassword.min_cost

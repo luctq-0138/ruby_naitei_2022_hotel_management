@@ -1,12 +1,12 @@
 <tr>
   <% if !booking.cancel? %>
-    <td><%= booking.booking_date %></td>
-    <td><%= booking.check_in %></td>
-    <td><%= booking.check_out %></td>
+    <td><%= booking.booking_date.strftime(Settings.date.format) %></td>
+    <td><%= booking.check_in.strftime(Settings.date.format) %></td>
+    <td><%= booking.check_out.strftime(Settings.date.format) %></td>
     <td>
       <%= check_status booking %>
     </td>
-    <td><%= booking.rooms[0].room_type.name %></td>
+    <td><%= link_to booking.rooms[0].room_type.name, booking.rooms[0].room_type  %></td>
     <td>
       <% booking.rooms.each do |room| %>
         <p class="badge badge-light"><%= room.number  %></p>
