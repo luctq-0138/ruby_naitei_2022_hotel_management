@@ -3,79 +3,73 @@
   <td><%= booking.check_in.strftime(Settings.date.format) %></td>
   <td><%= booking.check_out.strftime(Settings.date.format) %></td>
   <td>
-    <% case %>
-    <% when booking.pending? %>
-    <span class="badge badge-secondary">Chờ phê duyệt</span>
-    <% when  booking.approve? %>
-    <span class="badge badge-success">Phê duyệt</span>
-    <% when booking.refuse? %>
-    <span class="badge badge-danger">Từ chối bởi admin
-    </span>
-    <% when booking.cancel? %>
-    <span class="badge badge-primary">Người dùng hủy booking</span>
-    <% when booking.paid? %>
-    <span class="badge badge-info">Người dùng đã thanh toán</span>
-  <% end %>
-</td>
-<td>
-  <% if booking.refuse? %>
-    <span class="badge badge-danger">
-      Từ chối bởi admin
-    </span>
-  <% end %>
-  <% if booking.cancel? %>
-    <span class="badge badge-danger">
-      Người dùng hủy booking
-    </span>
-  <% end %>
-</td>
-<td style="gap:30px">
-  <div>
-    <span><%= booking.user_name %></span>
-    <br/>
-    <span><%= booking.user_email %></span>
-    <br/>
-  </div>
-  <%# link to booking details %>
-  <%= link_to "Chi tiết", admin_booking_path(booking) %>
-</td>
-<td><%= booking.user_star_rate %></td>
-<td><%= booking.rooms[0].room_type.name %></td>
-<td>
-  <% booking.rooms.each do |room| %>
-    <p class="badge badge-light"><%= room.number  %></p>
-    <br/>
-  <% end %>
-</td>
-<td>
-  <div class="dropdown dropleft">
-    <button class="btn btn-secondary dropdown-toggle " type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      Cập nhật
-    </button>
-    <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
-      <li class="dropdown-item">
+    <%= check_status booking %>
+  </td>
+  <td>
+    <% if booking.refuse? %>
+      <span class="badge badge-danger">
+        Từ chối bởi admin
+      </span>
+    <% end %>
+    <% if booking.cancel? %>
+      <span class="badge badge-danger">
+        Người dùng hủy booking
+      </span>
+    <% end %>
+  </td>
+  <td style="gap:30px">
+    <div>
+      <span><%= booking.user_name %></span>
+      <br/>
+      <span><%= booking.user_email %></span>
+      <br/>
+    </div>
+    <%# link to booking details %>
+    <%= link_to "Chi tiết", admin_booking_path(booking) %>
+  </td>
+  <td><%= booking.user_star_rate %></td>
+  <td><%= booking.rooms[0].room_type.name %></td>
+  <td>
+    <% booking.rooms.each do |room| %>
+      <p class="badge badge-light"><%= room.number  %></p>
+      <br/>
+    <% end %>
+  </td>
+  <td>
+    <div class="dropdown dropleft">
+      <button class="btn btn-secondary dropdown-toggle " type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Cập nhật
+      </button>
+      <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
         <li class="dropdown-item">
-          <%# update_attribute booking status %>
-          <%= link_to "Phê duyệt", admin_booking_path(:id => booking.id,booking_status: Booking.statuses["approve"]), method: :put , class: "dropdown-item", data: { confirm: "Bạn có chắc chắn muốn phê duyệt đặt phòng này?" } %>
+          <li class="dropdown-item">
+            <%# update_attribute booking status %>
+            <%= link_to "Phê duyệt", admin_booking_path(:id => booking.id,booking_status: Booking.statuses["approve"]), method: :put , class: "dropdown-item", data: { confirm: "Bạn có chắc chắn muốn phê duyệt đặt phòng này?" } %>
+          </li>
+          <li class="dropdown-item">
+            <%# update_attribute booking status %>
+            <%= link_to "Người dùng đã thanh toán", admin_booking_path(:id => booking.id,booking_status: Booking.statuses["paid"]), method: :put , class: "dropdown-item", data: { confirm: "Bạn có chắc chắn muốn cập nhật booking này?" } %>
+          </li>
+          <li class="dropdown-divider"></li>
+          <li class="dropdown-submenu" >
+            <a  class="dropdown-item " tabindex="-1" href="#">Từ chối</a>
+            <ul class="dropdown-menu " >
+              <li class="dropdown-item">
+                <%= link_to "Phòng đã được đặt trước", admin_booking_path(:id =>
+                  booking.id,booking_status: Booking.statuses["refuse"]),
+                  method: :put , class: "dropdown-item",
+                  data: { confirm: "Bạn có chắc chắn muốn từ chối đặt phòng này?" } %>
+              </li>
+              <li class="dropdown-item">
+                <%= link_to "Phòng đang tu sửa", admin_booking_path(:id =>
+                  booking.id,booking_status: Booking.statuses["refuse"]),
+                  method: :put , class: "dropdown-item",
+                  data: { confirm: "Bạn có chắc chắn muốn từ chối đặt phòng này?" } %>
+              </li>
+            </ul>
+          </li>
         </li>
-        <li class="dropdown-item">
-          <%# update_attribute booking status %>
-          <%= link_to "Người dùng đã thanh toán", admin_booking_path(:id => booking.id,booking_status: Booking.statuses["paid"]), method: :put , class: "dropdown-item", data: { confirm: "Bạn có chắc chắn muốn cập nhật booking này?" } %>
-        </li>
-        <li class="dropdown-divider"></li>
-        <li class="dropdown-submenu" >
-          <a  class="dropdown-item " tabindex="-1" href="#">Từ chối</a>
-          <ul class="dropdown-menu " >
-            <li class="dropdown-item">
-              <%= link_to "Phòng đã được đặt trước", admin_booking_path(:id => booking.id,booking_status: Booking.statuses["refuse"]), method: :put , class: "dropdown-item", data: { confirm: "Bạn có chắc chắn muốn từ chối đặt phòng này?" } %>
-            </li>
-            <li class="dropdown-item">
-              <%= link_to "Phòng đang tu sửa", admin_booking_path(:id => booking.id,booking_status: Booking.statuses["refuse"]), method: :put , class: "dropdown-item", data: { confirm: "Bạn có chắc chắn muốn từ chối đặt phòng này?" } %>
-            </li>
-          </ul>
-        </li>
-      </li>
-    </ul>
-  </div>
-</td>
+      </ul>
+    </div>
+  </td>
 </tr>

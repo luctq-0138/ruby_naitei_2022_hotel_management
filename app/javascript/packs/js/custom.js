@@ -36,3 +36,25 @@ window.validate = function () {
   }
   return true;
 };
+window.validateSearchRoomType = function () {
+  let rooms = $('.grid-item-selected').length;
+  let date_in = $('#room_type_date_in').val();
+  let date_out = $('#room_type_date_out').val();
+  let flag_error = false;
+  if (rooms == 0) {
+    flag_error = true;
+    $('#list_rooms').addClass('display');
+  }
+  if (!date_in) {
+    flag_error = true;
+    $('#date_in').addClass('display');
+  }
+  if (!date_out) {
+    flag_error = true;
+    $('#date_out').addClass('display');
+  }
+  if (flag_error) {
+    return false;
+  }
+  return true;
+};

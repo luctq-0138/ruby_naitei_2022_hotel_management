@@ -6,4 +6,5 @@ class Booking < ApplicationRecord
   has_one :payment, dependent: :destroy
   has_many :room_bookeds, dependent: :destroy
   has_many :rooms, through: :room_bookeds
+  scope :newest, ->{order created_at: :desc}
 end

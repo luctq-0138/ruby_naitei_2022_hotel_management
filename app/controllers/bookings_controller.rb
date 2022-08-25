@@ -82,7 +82,7 @@ class BookingsController < ApplicationController
     return room if room
 
     flash[:danger] = t ".not_found_room"
-    redirect_to new_booki_path
+    redirect_to new_booking_path
   end
 
   def find_booking booking_id

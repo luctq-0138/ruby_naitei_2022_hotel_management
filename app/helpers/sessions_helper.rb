@@ -68,4 +68,8 @@ module SessionsHelper
     flash[:danger] = t "users.require_login"
     redirect_to login_path
   end
+
+  def store_search search
+    session[:search] = search
+  end
 end

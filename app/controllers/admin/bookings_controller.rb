@@ -1,7 +1,8 @@
 class Admin::BookingsController < Admin::BaseController
+  include BookingsHelper
   before_action :find_booking, only: [:show, :edit, :update]
   def index
-    @pagy, @bookings = pagy Booking.all, page: params[:page],
+    @pagy, @bookings = pagy Booking.all.newest, page: params[:page],
                                          items: Settings.page.admin_booking_tb_size
   end
 
@@ -12,7 +13,7 @@ class Admin::BookingsController < Admin::BaseController
   def edit; end
 
   def update
-    if @booking.update  status: params[:booking_status].to_i
+    if @booking.update status: params[:booking_status].to_i
       flash[:success] = t "booking_update_success"
       redirect_to admin_bookings_path
     else
@@ -22,7 +23,7 @@ class Admin::BookingsController < Admin::BaseController
   end
 
   private
-  # find booking by id
+
   def find_booking
     @booking = Booking.find_by id: params[:id]
     return if @booking
