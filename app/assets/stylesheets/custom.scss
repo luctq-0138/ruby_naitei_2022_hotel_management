@@ -22,7 +22,7 @@ h1.title {
 
 /* form */
 .form-container {
-  width: 500px;
+  width: 450px;
   margin: auto;
   margin-top: 30px;
   margin-bottom: 100px;
@@ -244,4 +244,7 @@ booking_list_section {
 .required::after {
   content: '*';
   color: red;
+}
+.toast-message {
+  font-size: 16px;
 }

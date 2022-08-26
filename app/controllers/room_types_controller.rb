@@ -1,7 +1,7 @@
 require "set"
 class RoomTypesController < ApplicationController
   def index
-    rooms = RoomType.search_room_type(session[:search])
+    rooms = RoomType.search_room_type(session[:search]).newest
     session.delete(:search)
     @pagy, @room_types = pagy rooms, items: Settings.page.default_size
   end

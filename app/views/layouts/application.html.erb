@@ -14,9 +14,7 @@
       <div class="loader"></div>
     </div>
     <%= render "layouts/header"%>
-    <% flash.each do |message_type, message| %>
-      <div class="alert alert-<%= message_type %>"><%= message %></div>
-    <% end %>
+    <%= toastr_flash %>
     <!-- Header End -->
     <%= yield %>
     <%= render "layouts/footer"%>

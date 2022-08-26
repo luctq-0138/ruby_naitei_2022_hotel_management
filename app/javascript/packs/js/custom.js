@@ -12,6 +12,7 @@ window.roomSelect = function (self) {
       return oldVal + '@' + room_id;
     });
   }
+  console.log($('#booking_input_rooms').val());
 };
 
 window.validate = function () {

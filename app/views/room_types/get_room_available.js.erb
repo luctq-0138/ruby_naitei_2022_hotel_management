@@ -4,6 +4,6 @@ $(".shb-booking-your-stay-wrapper").html("<%= j render("room_types/booking_form"
                                           check_in: @check_in,
                                           check_out: @check_out) %>")
 $("#reset").click(function() {
-$(".shb-booking-your-stay-wrapper").html("<%= j render("room_types/check_available_form"
+$(".shb-booking-your-stay-wrapper").html("<%= j render("room_types/check_available_form",
                                           room_type: @room_type) %>")
 });

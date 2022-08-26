@@ -34,7 +34,7 @@ en:
     create:
       login_success: "Welcome to our hotel"
       login_fail: "Email or password is invalid"
-      account_not_actived: "Account not activated. Check your email for the activation link."
+      account_not_activated: "Account not activated. Check your email for the activation link."
   static_pages:
     home:
       title: "Welcome to my hotel"
@@ -329,3 +329,13 @@ en:
       title: "Forgot password"
       form:
         btn_submit: "Submit"
+    reviews:
+      create:
+        add_review_success: "Thêm review thành công"
+        add_review_fail: "Thêm review thất bại"
+      find_room_type:
+        not_found_room_type: "Không tìm thấy loại phòng"
+      add_review:
+        your_rating: "Đánh giá của bạn"
+        review: "Review"
+        submit: "Xác nhận"
