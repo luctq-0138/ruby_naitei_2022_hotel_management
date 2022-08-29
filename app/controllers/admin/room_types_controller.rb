@@ -1,7 +1,7 @@
 class Admin::RoomTypesController < Admin::BaseController
   before_action :find_room_type, only: %i(edit update destroy)
   def index
-    @pagy, @room_types = pagy RoomType.all.newest, page: params[:page],
+    @pagy, @room_types = pagy RoomType.search_name(params[:name]).newest, page: params[:page],
                                             items: Settings.page.admin_rooms_tb_size
   end
 
@@ -10,7 +10,7 @@ class Admin::RoomTypesController < Admin::BaseController
   end
 
   def update
-    if @room_type.update room_type_params
+    if @room_type.update room_type_params.except("rooms")
       flash[:success] = t ".update_success"
       redirect_to admin_room_types_path
     else
@@ -29,7 +29,7 @@ class Admin::RoomTypesController < Admin::BaseController
   end
 
   def create
-    @room_type = RoomType.new room_type_params
+    @room_type = RoomType.new room_type_params.except("rooms")
     if @room_type.save
       flash[:success] = t ".create_success"
       redirect_to admin_room_types_path
@@ -56,6 +56,6 @@ class Admin::RoomTypesController < Admin::BaseController
   end
 
   def room_type_params
-    params.require(:room_type).permit :name, :description, :cost, :image, :capacity, :size
+    params.require(:room_type).permit %i(name cost image capacity size services description rooms)
   end
 end

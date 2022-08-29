@@ -16,4 +16,10 @@ module BookingsHelper
       content_tag(:span, "Người dùng đã thanh toán", class: "badge badge-info")
     end
   end
+
+  def status_options
+    Booking.statuses.map do |status|
+      status
+    end.unshift(["all", ""])
+  end
 end
