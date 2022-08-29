@@ -1,0 +1,18 @@
+<div class="review-add">
+  <%= form_for(:review, url: reviews_path) do |f| %>
+    <%= f.hidden_field :room_type_id, value: @room_type.id %>
+    <%= f.hidden_field :user_id, value: current_user.id%>
+    <div class="d-flex align-items-center mb-1">
+      <div class="mb-1"><%= t ".your_rating" %>: </div>
+      <div class="rating">
+        <% (Settings.star_rate.min..Settings.star_rate.max).reverse_each do |i|%>
+          <%= f.radio_button :star_rate, i, id: i %>
+          <label for="<%= "#{i}" %>">☆</label>
+        <% end %>
+      </div>
+    </div>
+    <%= f.label :review, t(".review") %>
+    <%= f.text_area :review, col: 30, rows: 8 %>
+    <button type="submit"><%= t ".submit"%></button>
+  <% end %>
+</div>

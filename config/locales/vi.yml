@@ -313,13 +313,13 @@ vi:
       title: "Quên mật khẩu"
       form:
         btn_submit: "Xác nhận"
-    reviews:
-      create:
-        add_review_success: "Thêm review thành công"
-        add_review_fail: "Thêm review thất bại"
-      find_room_type:
-        not_found_room_type: "Không tìm thấy loại phòng"
-      add_review:
-        your_rating: "Đánh giá của bạn"
-        review: "Review"
-        submit: "Xác nhận"
+  reviews:
+    create:
+      add_review_success: "Thêm review thành công"
+      add_review_fail: "Thêm review thất bại"
+    find_room_type:
+      not_found_room_type: "Không tìm thấy loại phòng"
+    add_review:
+      your_rating: "Đánh giá của bạn"
+      review: "Review"
+      submit: "Xác nhận"

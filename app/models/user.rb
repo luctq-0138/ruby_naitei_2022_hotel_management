@@ -4,6 +4,7 @@ class User < ApplicationRecord
   enum role: {user: 0, admin: 1}
   has_many :payments, dependent: :destroy
   has_many :bookings, dependent: :destroy
+  has_many :reviews, dependent: :destroy
   has_secure_password
 
   before_save :downcase_email

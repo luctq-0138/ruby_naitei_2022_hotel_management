@@ -290,6 +290,7 @@ en:
       approve: "Approve"
       refuse: "Refuse"
       confirm_delete: "You sure cancel your booking?"
+      paid: "Paid"
   account_activations:
     edit:
       user_unsuccess: "Invalid activation link"
@@ -329,13 +330,13 @@ en:
       title: "Forgot password"
       form:
         btn_submit: "Submit"
-    reviews:
-      create:
-        add_review_success: "Thêm review thành công"
-        add_review_fail: "Thêm review thất bại"
-      find_room_type:
-        not_found_room_type: "Không tìm thấy loại phòng"
-      add_review:
-        your_rating: "Đánh giá của bạn"
-        review: "Review"
-        submit: "Xác nhận"
+  reviews:
+    create:
+      add_review_success: "Add review success"
+      add_review_fail: "Add review fail"
+    find_room_type:
+      not_found_room_type: "Not found room type"
+    add_review:
+      your_rating: "Your rating"
+      review: "Review"
+      submit: "Submit"
