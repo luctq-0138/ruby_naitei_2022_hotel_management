@@ -28,9 +28,9 @@
     <%= link_to "Chi tiết", admin_booking_path(booking) %>
   </td>
   <td><%= booking.user_star_rate %></td>
-  <td><%= booking.rooms[0].room_type.name %></td>
+  <td><%= booking.rooms.first.room_type.name %></td>
   <td>
-    <% booking.rooms.each do |room| %>
+    <% booking.rooms.includes(:room_bookeds).each do |room| %>
       <p class="badge badge-light"><%= room.number  %></p>
       <br/>
     <% end %>
