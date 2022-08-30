@@ -120,6 +120,9 @@ en:
     header_login_signup:
       booking: "Booking"
     header:
+      logo: "King Hotel"
+      english: "English"
+      vietnamese: "Vietnamese"
       home: "Home"
       room: "Rooms"
       about: "About"
@@ -181,6 +184,7 @@ en:
       admin_admin_user_show: "Admin Admin User"
       admin_admin_user_new: "New Admin Admin"
     footer:
+      logo: "King Hotel"
       title: "We inspire and reach millions of travelers across 90 local websites"
       contact: "Contact us"
       about: "About us"

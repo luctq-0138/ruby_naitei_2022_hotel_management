@@ -3,7 +3,7 @@
 @import 'color.scss';
 
 /* typography */
-ul {
+.flag-dropdown ul {
   margin: 0;
 }
 
@@ -162,7 +162,6 @@ thead > tr > th {
 }
 .shb-mobile-sidebar {
   display: block;
-  margin-top: 30px;
 }
 .shb-booking-your-stay-wrapper {
   box-shadow: 0px 0px 12px 5px rgba(0, 0, 0, 0.1);
@@ -284,4 +283,8 @@ booking_list_section {
 
 .rating:hover > input:checked ~ label:before {
   opacity: 0.4;
+}
+.logo-link {
+  color: black;
+  font-size: 32px;
 }

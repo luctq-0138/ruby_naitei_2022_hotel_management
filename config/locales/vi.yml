@@ -121,6 +121,9 @@ vi:
     header_login_signup:
       booking: "Đặt phòng ngay"
     header:
+      logo: "King Hotel"
+      english: "Tiếng Anh"
+      vietnamese: "Tiếng Việt"
       home: "Trang chủ"
       room: "Phòng"
       about: "Giới thiệu"
@@ -162,6 +165,7 @@ vi:
       edit_sidebar: "Sửa thanh bên"
       new_sidebar: "Thêm thanh bên"
     footer:
+      logo: "King Hotel"
       title: "Chúng tôi truyền cảm hứng và tiếp cận hàng triệu khách du lịch trên 90 trang web địa phương"
       contact: "Liên hệ với chúng tôi"
       about: "Về chúng tôi"

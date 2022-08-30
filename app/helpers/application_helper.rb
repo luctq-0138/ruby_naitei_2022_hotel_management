@@ -15,4 +15,8 @@ module ApplicationHelper
     end.join("\n").html_safe
   end
   # rubocop:enable Rails/OutputSafety
+
+  def is_active? link_path
+    current_page?(link_path) ? "active" : ""
+  end
 end

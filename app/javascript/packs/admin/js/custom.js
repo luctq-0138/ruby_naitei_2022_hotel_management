@@ -15,8 +15,5 @@ $(document).on('turbolinks:load', function () {
         $('.dropdown-menu-filter').addClass('show');
       }
     });
-    $('#booking-date').datepicker({
-      dateFormat: 'yy-mm-dd',
-    });
   });
 });
