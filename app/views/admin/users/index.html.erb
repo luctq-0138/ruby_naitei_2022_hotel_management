@@ -9,11 +9,11 @@
           <span class="glyphicon glyphicon-filter"></span>
           <span class="sr-only">Filters</span>
         </button>
-        <%= form_with(url: admin_users_path, method: "get") do |f| %>
+        <%= search_form_for(@search, url: admin_users_path, method: "get") do |f| %>
           <ul class="dropdown-menu dropdown-menu-filter">
             <li>
-              <%= f.label :name, "Name"%>
-              <%= f.text_field :name, class: "form-control date-input", value: params[:name] %>
+              <%= f.label :name_cont, "Name"%>
+              <%= f.text_field :name_cont, class: "form-control date-input", value: params[:name_cont] %>
             </li>
             <%= f.submit 'Search', class: "btn btn-primary" %>
           </ul>
@@ -24,7 +24,7 @@
       <table  class="table table-bordered table-hover">
         <thead>
           <tr>
-            <th><%= t(".name") %></th>
+            <th><%= sort_link @search, :name, t(".name") %></th>
             <th><%= t(".email") %></th>
             <th><%= t(".address") %></th>
             <th><%= t(".phone_number") %></th>
