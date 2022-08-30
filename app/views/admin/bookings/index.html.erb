@@ -10,18 +10,17 @@
           <span class="glyphicon glyphicon-filter"></span>
           <span class="sr-only">Filters</span>
         </button>
-        <%= form_with(url: admin_bookings_path, method: "get") do |f| %>
+        <%= search_form_for(@search, url: admin_bookings_path, method: "get") do |f| %>
           <ul class="dropdown-menu dropdown-menu-filter">
             <li>
-              <%= f.label :booking_date, "Booking date"%>
-              <%= f.date_field :booking_date, class: "form-control date-input", value: params[:booking_date] %>
-              <%= f.label :check_in, "Check in"%>
-              <%= f.date_field :check_in, class: "form-control", value: params[:check_in] %>
-              <%= f.label :check_out, "Check out"%>
-              <%= f.date_field :check_out, class: "form-control", value: params[:check_out] %>
-              <%= f.label :status, "Status"%>
-              <%= select_tag(:status, options_for_select(status_options,
-                                      params[:status]), class: "form-control") %>
+              <%= f.label :booking_date_cont, "Booking date"%>
+              <%= f.date_field :booking_date_cont, class: "form-control date-input", value: params[:booking_date_cont] %>
+              <%= f.label :check_in_cont, "Check in"%>
+              <%= f.date_field :check_in_cont, class: "form-control", value: params[:check_in_cont] %>
+              <%= f.label :check_out_cont, "Check out"%>
+              <%= f.date_field :check_out_cont, class: "form-control", value: params[:check_out_cont] %>
+              <%= f.label :status_eq, "Status"%>
+              <%= f.select :status_eq, status_options, {}, {prompt: params[:status_eq], class: "form-control"} %>
             </li>
             <%= f.submit 'Search', class: "btn btn-primary" %>
           </ul>
