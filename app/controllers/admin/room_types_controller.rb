@@ -4,6 +4,11 @@ class Admin::RoomTypesController < Admin::BaseController
     @search = RoomType.ransack params[:q]
     @pagy, @room_types = pagy @search.result.newest, page: params[:page],
                                             items: Settings.page.admin_rooms_tb_size
+    @room_types_export = @search.result.includes(:rooms)
+    respond_to do |format|
+      format.html
+      format.xlsx
+    end
   end
 
   def new

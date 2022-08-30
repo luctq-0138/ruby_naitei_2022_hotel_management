@@ -37,11 +37,6 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_in_path_for resource
-    unless current_user.activated?
-      sign_out
-      flash[:warning] = t ".account_not_activated"
-      stored_location_for(resource) || root_path
-    end
     if current_user&.admin?
       stored_location_for(resource) || admin_root_path
     else
