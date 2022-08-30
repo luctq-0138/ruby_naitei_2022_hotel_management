@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :logged_in_user, :must_be_user
+  before_action :user_signed_in?, :must_be_user
 
   def new
     @booking = session[:booking]

@@ -1,0 +1,42 @@
+<div class="breadcrumb-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="breadcrumb-text">
+          <h2>Sign up</h2>
+          <div class="bt-option">
+            <%= link_to t(".home"), root_path %>
+            <span>Sign up</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="form-container">
+  <div>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= f.label :name, t(".form.name"), class: "required" %>
+      <%= f.text_field :name, class: "form-control" %>
+      <%= raw error_message(@user, :name) %>
+      <%= f.label :email %><br />
+      <%= f.email_field :email, autofocus: true, autocomplete: "email",class: "form-control" %>
+      <%= f.label :phone_number, "Phone Number", class: "required" %>
+      <%= f.number_field :phone_number, class: "form-control" %>
+      <%= raw error_message(@user, :phone_number) %>
+      <%= f.label :address, "Address", class: "required" %>
+      <%= f.text_field :address, class: "form-control" %>
+      <%= raw error_message(@user, :address) %>
+      <%= f.label :password ,class: "required" %>
+      <%= f.password_field :password, autocomplete: "new-password",class: "form-control" %>
+      <%= raw error_message(@user, :address) %>
+      <%= f.label :password_confirmation ,class: "required"%><br />
+      <%= f.password_field :password_confirmation, autocomplete: "new-password",class: "form-control" %>
+      <%= raw error_message(@user, :password_confirmation) %>
+      <%= render "devise/shared/links" %>
+      <div class="actions">
+        <%= f.submit "Sign up", class: "btn btn-primary"  %>
+      </div>
+    <% end %>
+  </div>
+</div>

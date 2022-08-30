@@ -19,4 +19,8 @@ module ApplicationHelper
   def is_active? link_path
     current_page?(link_path) ? "active" : ""
   end
+
+  def store_search search
+    session[:search] = search
+  end
 end
