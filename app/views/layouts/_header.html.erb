@@ -26,7 +26,7 @@
       <li id="about_nav"><%= link_to t(".about"), about_path %></li>
       <li id="blog_nav"><%= link_to t(".blog"), blog_path %></li>
       <li id="contact_nav"><%= link_to t(".contact"), contact_path %></li>
-      <% if logged_in? && current_user.user? %>
+      <% if user_signed_in? && current_user.user? %>
         <li class="avatar_list_item">
           <div>
             <img class="user_avatar" src="https://firebasestorage.googleapis.com/v0/b/hotel-management-a5ac1.appspot.com/o/faces-1.jpg?alt=media&token=ee3913a3-75fd-4107-8fa7-988f251046d0" alt="">
@@ -34,13 +34,13 @@
               <li class="user_name">@<%= current_user.name %></li>
               <li><%= link_to t(".booking_history"), bookings_path %></li>
               <li><%= link_to t(".profile"), "#" %></li>
-              <li><%= link_to t(".logout"), logout_path, method: :delete %></li>
+              <li><%= link_to t(".logout"), destroy_user_session_path, method: :delete %></li>
             </ul>
           </div>
         </li>
       <% else %>
-        <li><%= link_to t(".signup"), signup_path %></li>
-        <li><%= link_to t(".login"), login_path %></li>
+        <li><%= link_to t(".signup"), new_user_registration_path %></li>
+        <li><%= link_to t(".login"), new_user_session_path %></li>
       <% end %>
     </ul>
   </nav>
@@ -117,7 +117,7 @@
                 <li id="about_nav" class="<%= is_active?(about_path) %>"><%= link_to t(".about"), about_path %></li>
                 <li id="blog_nav" class="<%= is_active?(blog_path) %>"><%= link_to t(".blog"), blog_path %></li>
                 <li id="contact_nav" class="<%= is_active?(contact_path) %>"><%= link_to t(".contact"), contact_path %></li>
-                <% if logged_in? && current_user.user? %>
+                <% if user_signed_in? && current_user.admin? %>
                   <li class="avatar_list_item">
                     <div>
                       <img class="user_avatar" src="https://firebasestorage.googleapis.com/v0/b/hotel-management-a5ac1.appspot.com/o/faces-1.jpg?alt=media&token=ee3913a3-75fd-4107-8fa7-988f251046d0" alt="">
@@ -125,13 +125,13 @@
                         <li class="user_name">@<%= current_user.name %></li>
                         <li><%= link_to t(".booking_history"), bookings_path %></li>
                         <li><%= link_to t(".profile"), "#" %></li>
-                        <li><%= link_to t(".logout"), logout_path, method: :delete %></li>
+                        <li><%= link_to t(".logout"), destroy_user_session_path, method: :delete %></li>
                       </ul>
                     </div>
                   </li>
                 <% else %>
-                  <li class="<%= is_active?(signup_path) %>"><%= link_to t(".signup"), signup_path %></li>
-                  <li class="<%= is_active?(login_path) %>"><%= link_to t(".login"), login_path %></li>
+                  <li class="<%= is_active?(new_user_registration_path) %>"><%= link_to t(".signup"), new_user_registration_path %></li>
+                  <li class="<%= is_active?(new_user_session_path) %>"><%= link_to t(".login"), new_user_session_path %></li>
                 <% end %>
               </ul>
             </nav>

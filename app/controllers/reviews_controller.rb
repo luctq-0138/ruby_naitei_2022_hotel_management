@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-  before_action :logged_in_user, :must_be_user, :find_room_type
+  before_action :user_signed_in?, :must_be_user, :find_room_type
   def create
     @review = @room_type.reviews.new review_params.except(:room_type_id)
     if @review.save

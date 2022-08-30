@@ -1,11 +1,15 @@
 class User < ApplicationRecord
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  USER_ATTRS = %i(name email password phone_number address password_confirmation remember_me).freeze
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :validatable
   attr_accessor :remember_token, :activation_token, :reset_token
 
   enum role: {user: 0, admin: 1}
   has_many :payments, dependent: :destroy
   has_many :bookings, dependent: :destroy
   has_many :reviews, dependent: :destroy
-  has_secure_password
 
   before_save :downcase_email
   before_create :create_activation_digest
@@ -42,11 +46,6 @@ class User < ApplicationRecord
     def new_token
       SecureRandom.urlsafe_base64
     end
-  end
-
-  def remember
-    self.remember_token = User.new_token
-    update_attribute(:remember_digest, User.digest(remember_token))
   end
 
   def forget
