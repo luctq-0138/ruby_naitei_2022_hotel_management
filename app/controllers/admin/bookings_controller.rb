@@ -2,7 +2,7 @@ class Admin::BookingsController < Admin::BaseController
   include BookingsHelper
   before_action :find_booking, only: [:show, :edit, :update]
   def index
-    @search = Booking.ransack params[:q]
+    @search = Booking.includes(:user).ransack params[:q]
     @pagy, @bookings = pagy @search.result.newest, page: params[:page],
                                     items: Settings.page.admin_booking_tb_size
   end
