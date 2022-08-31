@@ -21,7 +21,9 @@ Rails.application.routes.draw do
     resources :users
     namespace :admin do
       root to: "static_pages#index"
-      resources :room_types
+      resources :room_types do
+        collection {get :export}
+      end
       resources :bookings
        resources :users do
         resources :bookings

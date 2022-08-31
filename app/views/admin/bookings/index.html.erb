@@ -13,14 +13,21 @@
         <%= search_form_for(@search, url: admin_bookings_path, method: "get") do |f| %>
           <ul class="dropdown-menu dropdown-menu-filter">
             <li>
+              <%= f.label :user_name_cont, "Booking Owner"%>
+              <%= f.text_field :user_name_cont, class: "form-control date-input",
+                                                value: params[:q]? params[:q][:user_name_cont] : "" %>
               <%= f.label :booking_date_cont, "Booking date"%>
-              <%= f.date_field :booking_date_cont, class: "form-control date-input", value: params[:booking_date_cont] %>
+              <%= f.date_field :booking_date_cont, class: "form-control date-input",
+                                                   value: params[:q]? params[:q][:booking_date_cont] : "" %>
               <%= f.label :check_in_cont, "Check in"%>
-              <%= f.date_field :check_in_cont, class: "form-control", value: params[:check_in_cont] %>
+              <%= f.date_field :check_in_cont, class: "form-control",
+                                               value: params[:q]? params[:q][:check_in_cont] : "" %>
               <%= f.label :check_out_cont, "Check out"%>
-              <%= f.date_field :check_out_cont, class: "form-control", value: params[:check_out_cont] %>
+              <%= f.date_field :check_out_cont, class: "form-control",
+                                                value: params[:q]? params[:q][:check_out_cont] : "" %>
               <%= f.label :status_eq, "Status"%>
-              <%= f.select :status_eq, status_options, {}, {prompt: params[:status_eq], class: "form-control"} %>
+              <%= f.select :status_eq, status_options, {},
+                                       {prompt: params[:q]? params[:q][:status_eq] : "", class: "form-control"} %>
             </li>
             <%= f.submit 'Search', class: "btn btn-primary" %>
           </ul>

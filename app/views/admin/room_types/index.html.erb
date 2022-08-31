@@ -1,6 +1,12 @@
 <!-- Main content -->
 <div class="col-12">
-  <h1>Danh sách các phòng</h1>
+  <h1>
+    Danh sách các phòng
+    <%= link_to admin_room_types_path(format: :xlsx, q: request.query_parameters[:q]),
+                                     :data => {:confirm => "Are you sure export to excel?"} do %>
+      <i class="fa fa-file-excel-o "></i>
+    <% end %>
+  </h1>
   <div class="card">
     <!-- /.card-header -->
     <div class="card-body">
@@ -15,9 +21,29 @@
             <ul class="dropdown-menu dropdown-menu-filter">
               <li>
                 <%= f.label :name_cont, "Name"%>
-                <%= f.text_field :name_cont, class: "form-control date-input", value: params[:name_cont] %>
+                <%= f.text_field :name_cont, class: "form-control date-input",
+                                             value: params[:q]? params[:q][:name_cont] : "" %>
+                <%= f.label "Price"%>
+                <div class="d-flex align-items-center">
+                  <%= f.number_field :cost_gteq, class: "form-control date-input",
+                                                 value: params[:q]? params[:q][:cost_gteq] : "" %>
+                  <div class="concat-input"></div>
+                  <%= f.number_field :cost_lteq, class: "form-control date-input",
+                                                 value: params[:q]? params[:q][:cost_lteq] : "" %>
+                </div>
+                <%= f.label "Area"%>
+                <div class="d-flex align-items-center">
+                  <%= f.number_field :size_gteq, class: "form-control date-input",
+                                                 value: params[:q]? params[:q][:size_gteq] : "" %>
+                  <div class="concat-input"></div>
+                  <%= f.number_field :size_lteq, class: "form-control date-input",
+                                                 value: params[:q]? params[:q][:size_lteq] : "" %>
+                </div>
+                <%= f.label :capacity_eq, "Capacity"%>
+                <%= f.number_field :capacity_eq, class: "form-control date-input",
+                                                 value: params[:q]? params[:q][:capacity_eq] : "" %>
               </li>
-              <%= f.submit 'Search', class: "btn btn-primary" %>
+              <%= f.submit "Search", class: "btn btn-primary" %>
             </ul>
           <% end %>
         </div>

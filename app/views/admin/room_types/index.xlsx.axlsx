@@ -1,0 +1,18 @@
+wb = xlsx_package.workbook
+wb.styles do |style|
+  table_header = style.add_style(bg_color: '0000FF')
+  wb.add_worksheet(name: 'room_types') do |sheet|
+    sheet.add_row ["STT", "Name", "Cost", "Size", "Capacity", "Services", "Star rate", "Image", "Description", "List rooms"], style: table_header
+    @room_types_export.each_with_index do |room_type, index|
+      sheet.add_row [index, room_type.name,
+                    room_type.cost,
+                    room_type.size,
+                    room_type.capacity,
+                    room_type.services,
+                    room_type.reviews.average(:star_rate).floor,
+                    room_type.image,
+                    room_type.description,
+                    room_type.rooms.map(&:number)]
+    end
+  end
+end

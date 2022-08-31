@@ -13,31 +13,38 @@
           <ul class="dropdown-menu dropdown-menu-filter">
             <li>
               <%= f.label :name_cont, "Name"%>
-              <%= f.text_field :name_cont, class: "form-control date-input", value: params[:name_cont] %>
+              <%= f.text_field :name_cont, class: "form-control date-input",
+                                           value: params[:q]? params[:q][:name_cont] : "" %>
+              <%= f.label :email_cont, "Email"%>
+              <%= f.text_field :email_cont, class: "form-control date-input",
+                                            value: params[:q]? params[:q][:email_cont] : "" %>
+              <%= f.label :address_cont, "Address"%>
+              <%= f.text_field :address_cont, class: "form-control date-input",
+                                              value: params[:q]? params[:q][:address_cont] : "" %>
             </li>
             <%= f.submit 'Search', class: "btn btn-primary" %>
           </ul>
         <% end %>
       </div>
+      <% if @users.any? %>
+        <table  class="table table-bordered table-hover">
+          <thead>
+            <tr>
+              <th><%= sort_link @search, :name, t(".name") %></th>
+              <th><%= t(".email") %></th>
+              <th><%= t(".address") %></th>
+              <th><%= t(".phone_number") %></th>
+              <th><%= t(".status") %></th>
+            </tr>
+          </thead>
+          <tbody>
+            <%= render @users %>
+          </tbody>
+        </table>
+      <% else %>
+        <p>Không tìm thấy người dùng nào</p>
+      <% end %>
     </div>
-    <% if @users.any? %>
-      <table  class="table table-bordered table-hover">
-        <thead>
-          <tr>
-            <th><%= sort_link @search, :name, t(".name") %></th>
-            <th><%= t(".email") %></th>
-            <th><%= t(".address") %></th>
-            <th><%= t(".phone_number") %></th>
-            <th><%= t(".status") %></th>
-          </tr>
-        </thead>
-        <tbody>
-          <%= render @users %>
-        </tbody>
-      </table>
-    <% else %>
-      <p>Không tìm thấy người dùng nào</p>
-    <% end %>
   </div>
 </div>
 </div>
