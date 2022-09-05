@@ -93,7 +93,6 @@ yarn-debug.log*
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
-/config/database.yml
 
 /public/packs
 /public/packs-test
@@ -103,7 +102,6 @@ yarn-debug.log*
 .yarn-integrity
 .framgia-ci-reports/
 .framgia-ci-result.temp.yml
-/config/database.yml
 /.vscode
 
 config/settings.local.yml
